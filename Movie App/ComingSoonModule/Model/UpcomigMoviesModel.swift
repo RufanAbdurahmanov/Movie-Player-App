@@ -11,7 +11,7 @@ import Foundation
 struct UpcomingMovies: Codable {
     let dates: UpcomigDates?
     let page: Int?
-    let results: [UpcomingResult]?
+    let results: [UpcomingMovieResult]?
     let totalPages, totalResults: Int?
 
     enum CodingKeys: String, CodingKey {
@@ -26,8 +26,8 @@ struct UpcomigDates: Codable {
     let maximum, minimum: String?
 }
 
-// MARK: - UpcomingResult
-struct UpcomingResult: Codable, CellProtocol {
+// MARK: - UpcomingMovieResult
+struct UpcomingMovieResult: Codable, CellProtocol {
     let adult: Bool?
     let backdropPath: String?
     var url: String? {

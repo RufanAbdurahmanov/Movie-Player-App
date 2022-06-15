@@ -10,6 +10,7 @@ private enum EndPoint: String {
     case trending = "/trending"
     case movie = "/movie"
     case search = "/search/company"
+    case tv = "tv"
 }
 
 enum baseURL: String {
@@ -80,3 +81,11 @@ enum MediaType {
         }
     }
 }
+
+
+//struct Constants {
+//    static let API_KEY = "697d439ac993538da4e3e60b54e762cd"
+//    static let baseURL = "https://api.themoviedb.org"
+//    static let YoutubeAPI_KEY = "AIzaSyDqX8axTGeNpXRiISTGL7Tya7fjKJDYi4g"
+//    static let YoutubeBaseURL = "https://youtube.googleapis.com/youtube/v3/search?"
+//}

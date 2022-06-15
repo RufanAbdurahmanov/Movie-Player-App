@@ -9,12 +9,12 @@ import Foundation
 
 struct CellsViewModel {
     
-    var items = [MovieItem]()
+    var items = [CellItem]()
     var title: String = ""
     
     init() { }
     
-    init(title: String, items: [MovieItem]) {
+    init(title: String, items: [CellItem]) {
         self.items = items
         self.title = title
     }
@@ -23,7 +23,7 @@ struct CellsViewModel {
         return items.count
     }
     
-    func itemAtCell(index: Int) -> MovieItem {
+    func itemAtCell(index: Int) -> CellItem {
         return items[index]
     }
 }

@@ -10,7 +10,7 @@ import Foundation
 
 class ComingSoonViewModel {
     
-    var upcomingMovies = [UpcomingResult]()
+    var upcomingMovies = [UpcomingMovieResult]()
     
     
     func getComingSoonMovies(complete: @escaping()->()) {
@@ -24,7 +24,7 @@ class ComingSoonViewModel {
         return upcomingMovies.count
     }
     
-    func itemAtCell(index: Int) -> UpcomingResult {
+    func itemAtCell(index: Int) -> UpcomingMovieResult {
         return upcomingMovies[index]
     }
     
