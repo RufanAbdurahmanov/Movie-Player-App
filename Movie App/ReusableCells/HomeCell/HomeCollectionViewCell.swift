@@ -21,9 +21,7 @@ class HomeCollectionViewCell: UICollectionViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        //backgroundColor = .lightBlueColor.withAlphaComponent(0.5)
-        //seeAllImageView.image = UIImage(systemName: "greaterthan")
-        seeAllImageView.image = UIImage(named: "more2")
+        //seeAllImageView.image = UIImage(named: "more2")
         collectionView.delegate = self
         collectionView.dataSource = self
         

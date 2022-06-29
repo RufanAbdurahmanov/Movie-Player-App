@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import Alamofire
 
 protocol WebServiceProtocol {
     func getTrendingMovies(page: Int, complete: @escaping([TrendingMovieResult])->())
@@ -27,13 +28,15 @@ protocol WebServiceProtocol {
     func getDiscoverMovies(page: Int, complete: @escaping([DiscoverResult])->())
     
     func getUpcomingMovies(page: Int, complete: @escaping([UpcomingMovieResult])->())
+    
+    func rateMovie(point: Float, movieID: Int, complete: @escaping((RatePostModel)->()))
 }
 
 class WebService: WebServiceProtocol {
     static let shared = WebService()
     
     func getTrendingMovies(page: Int, complete: @escaping([TrendingMovieResult]) ->()) {
-        let url = "\(baseURL.url.rawValue)\(Request.trending.path)\(MediaType.movie.type)\(TimeInterval.week.interval)?api_key=\(apiKey.key.rawValue)&language=en-US&page=\(page)"
+        let url = "\(baseURL.url.rawValue)\(Request.trending.path)\(MediaType.movie.type)\(TimeInterval.day.interval)?api_key=\(apiKey.key.rawValue)&language=en-US&page=\(page)"
         
         NetworkRequest.shared.requestAPI(type: TrendingMovie.self, url: url) { response in
             complete(response.results!)
@@ -141,6 +144,35 @@ class WebService: WebServiceProtocol {
     }
     
     
+    func downloadVideo(urlString: String, completion: @escaping(Double, URL?)->()) {
+        
+        let url = URL(string: "http://clips.vorwaerts-gmbh.de/big_buck_bunny.mp4")
+        //let url = URL(string: "https://www.youtube.com/watch?v=VS_ub1QaIYQ")
+        
+        let request = AF.request(url!).downloadProgress(closure: {
+            (progress) in
+            let pro = progress.fractionCompleted
+                completion(pro, nil)
+        })
+        
+            request.responseData { response in
+                if let data = response.data {
+                    let documentsURL = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first!
+                    let videoURL = documentsURL.appendingPathComponent("video.mp4")
+                    do {
+                        try data.write(to: videoURL, options: .fileProtectionMask)
+                            completion(1, videoURL)
+                    } catch {
+                        print("Something went wrong!")
+                    }
+                }
+            }
+    }
     
+    func rateMovie(point: Float, movieID: Int, complete: @escaping((RatePostModel)->())) {
+        let url = "\(baseURL.url.rawValue)/\(MediaType.movie.type)/\(movieID)/rating?api_key=\(apiKey.key.rawValue)"
+        NetworkRequest.shared.requestAPI(type: RatePostModel.self, method: .post, url: url, params: ["value": point]) { response in
+            complete(response)
+        }
+    }
 }
-

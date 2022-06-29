@@ -49,6 +49,8 @@ class PersonTableViewCell: UITableViewCell {
                 alsoKnown += " \(text)"
             }
         }
+        biographyLabel.text = data.biography ?? ""
+        birthPlaceLabel.text = data.placeOfBirth
         alsoKnownLabel.text = alsoKnown
         birthdayLabel.text = data.birthday ?? "unknown"
         deathdayLabel.text = data.deathday ?? "still alive"

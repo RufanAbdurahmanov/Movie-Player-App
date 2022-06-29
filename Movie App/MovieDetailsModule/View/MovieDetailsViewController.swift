@@ -6,10 +6,22 @@
 //
 
 import UIKit
+import Cosmos
+import AVKit
+import PanModal
 
 class MovieDetailsViewController: UIViewController {
+    
     @IBOutlet weak var tableView: UITableView!
     let cellID = "\(DetailsTableViewCell.self)"
+    let playerController = AVPlayerViewController()
+    
+    var rate: Double?
+    
+    lazy var ratingView: CosmosView = {
+        let view = CosmosView()
+        return view
+    }()
     
     var viewModel = MovieDetailsViewModel()
     
@@ -21,16 +33,90 @@ class MovieDetailsViewController: UIViewController {
         tableView.register(UINib(nibName: cellID, bundle: nil), forCellReuseIdentifier: cellID)
         tableView.backgroundColor = .clear
         
+        let rateMovieButton = UIBarButtonItem(title: "Rate", style: .plain, target: self, action: #selector(rateMovie))
+        let downloadButton = UIBarButtonItem(image: UIImage(systemName: "arrow.down.to.line.compact"), style: .plain, target: self, action: #selector(downloadMovie))
+        downloadButton.tintColor = #colorLiteral(red: 0.9179999828, green: 0.200000003, blue: 0.2590000033, alpha: 1)
+        rateMovieButton.tintColor = #colorLiteral(red: 0.9179999828, green: 0.200000003, blue: 0.2590000033, alpha: 1)
+        navigationItem.rightBarButtonItems = [downloadButton, rateMovieButton]
+        
+    }
+    
+    var item: VideoResult!
+    
+    @objc func downloadMovie() {
+        let panmodalVC = self.storyboard?.instantiateViewController(withIdentifier: "\(PanModalViewController.self)") as! PanModalViewController
+        viewModel.downloadTrailer(item: item, cancelDownload: false) { errorMessage, progress in
+            if errorMessage != nil {
+                // show alert
+            } else if progress! < 1.0 {
+                panmodalVC.progress = Float(progress ?? 0.0)
+            } else {
+                panmodalVC.progress = Float(progress ?? 0.0)
+                self.tabBarController?.selectedIndex = 2
+            }
+        }
+        panmodalVC.cancelCallBack = {
+            self.viewModel.downloadTrailer(item: self.item, cancelDownload: true) { errorMassage, progress in
+                if let errorMassage = errorMassage {
+                    print("message:\(String(describing: errorMassage)) \n progress: \(String(describing: progress))")
+                } else {
+                    print("Cancel")
+                }
+            }
+        }
+        self.presentPanModal(panmodalVC)
+    }
+    
+    @objc func rateMovie() {
+        //Alert for the rating
+        let alert = UIAlertController(title: "\n\n", message: "", preferredStyle: .alert)
+        //The x/y coordinate of the rating view
+        let xCoord = alert.view.frame.width/2 - 160 
+        let yCoord = CGFloat(30.0)
+        
+        ratingView.rating = 0.0
+        ratingView.settings.starSize = 30
+        ratingView.settings.emptyBorderColor = UIColor.black
+        ratingView.settings.fillMode = .half
+        ratingView.settings.updateOnTouch = true
+        ratingView.frame.origin.x = xCoord
+        ratingView.frame.origin.y = yCoord
+        ratingView.didTouchCosmos = { [weak self] rating in
+            self?.rate = rating
+        }
+        
+        alert.addAction(UIAlertAction(title: "Rate", style: .default, handler: { [weak self] alert in
+            self?.viewModel.rateMovie(point: Float(self?.rate ?? 0.0)) { response in
+                if let success = response.success, success {
+                    self?.alertRateMessage(title: "Success", message: response.statusMessage ?? "")
+                } else {
+                    self?.alertRateMessage(title: "Error", message: response.statusMessage ?? "")
+                }
+            }
+        }))
+        alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: { [weak self] _ in
+            self?.rate = nil
+        }))
+        
+        alert.view.addSubview(ratingView)
+        present(alert, animated: true, completion: nil)
     }
     
     func getDatas() {
-            self.viewModel.getMovieDetails{
-                    self.viewModel.getCasts {
-                        self.tableView.reloadData()
-                    }
+        self.viewModel.getMovieDetails{
+            self.viewModel.getCasts {
+                self.tableView.reloadData()
             }
+        }
+    }
+    
+    func alertRateMessage(title: String, message: String) {
+        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "Ok", style: .default))
+        present(alert, animated: true, completion: nil)
     }
 }
+
 extension MovieDetailsViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 1
@@ -46,6 +132,16 @@ extension MovieDetailsViewController: UITableViewDelegate, UITableViewDataSource
             personsDetailVC.viewModel = PersonsDetailViewModel(casts: viewModel.movieCasts)
             self.navigationController?.show(personsDetailVC, sender: nil)
         }
+        cell.callBackToMovieDetails = { item in
+            self.item = item
+        }
+        
+        cell.callBackToMovieDetailsVC = { index in
+            let personVC = self.storyboard?.instantiateViewController(withIdentifier: "\(PersonViewController.self)") as! PersonViewController
+            personVC.viewModel = PersonViewModel(id: self.viewModel.movieCasts[index].id ?? 0)
+            self.navigationController?.show(personVC, sender: nil)
+        }
+        
         return cell
     }
     
@@ -53,4 +149,3 @@ extension MovieDetailsViewController: UITableViewDelegate, UITableViewDataSource
         UITableView.automaticDimension
     }
 }
-

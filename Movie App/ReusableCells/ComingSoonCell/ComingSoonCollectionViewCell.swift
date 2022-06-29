@@ -24,7 +24,7 @@ class ComingSoonCollectionViewCell: UICollectionViewCell {
     
     func configure(item: CellProtocol) {
         starImageView.image = UIImage(systemName: "star.fill")
-        imageView.loadImage(imageURL: item.url!)
+        imageView.loadImage(imageURL: item.url ?? "")
         titleLabel.text = item.cellTitle
         voteLabel.text = "\(item.vote ?? 0.0)"
         dateLabel.text = item.date

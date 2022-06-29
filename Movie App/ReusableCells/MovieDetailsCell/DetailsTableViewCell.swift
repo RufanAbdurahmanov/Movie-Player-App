@@ -6,7 +6,6 @@
 //
 
 import UIKit
-import youtube_ios_player_helper
 
 class DetailsTableViewCell: UITableViewCell {
     
@@ -25,15 +24,15 @@ class DetailsTableViewCell: UITableViewCell {
     @IBOutlet weak private var categoriesLabel: UILabel!
     
     @IBOutlet weak private var overviewLabel: UILabel!
-    
     @IBOutlet weak private var castCollectionView: UICollectionView!
-    
     @IBOutlet weak private var releaseDateLabel: UILabel!
     
     var castss = [MovieCast]()
     var cellID = "\(MovieCastCollectionViewCell.self)"
     
     var trailerView = Bundle.main.loadNibNamed("\(TrailerView.self)", owner: nil)?.first as! TrailerView
+    
+    var callBackToMovieDetails: ((VideoResult)->())?
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -51,6 +50,10 @@ class DetailsTableViewCell: UITableViewCell {
     override func layoutSubviews() {
         trailerView.frame = videoPlayer.bounds
         videoPlayer.addSubview(trailerView)
+        
+        trailerView.callBackForVideoID = { item in
+            self.callBackToMovieDetails?(item)
+        }
     }
     
     func configure(id: String, details: MovieDetails, casts: [MovieCast]) {
@@ -66,7 +69,7 @@ class DetailsTableViewCell: UITableViewCell {
         taglineLabel.text = details.tagline ?? ""
         
         for company in details.productionCompanies! {
-            companyName += "  \(String(describing: company.name ?? ""))"
+            companyName += "\(String(describing: company.name ?? ""))\n"
         }
         
         companiesLabel.text = companyName
@@ -83,11 +86,11 @@ class DetailsTableViewCell: UITableViewCell {
         releaseDateLabel.text = details.releaseDate ?? ""
     }
     var callback: (()->())?
-    
     @IBAction func seeAllButton(_ sender: Any) {
         callback!()
     }
     
+    var callBackToMovieDetailsVC:((Int)->())?
 }
 
 extension DetailsTableViewCell: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
@@ -104,7 +107,9 @@ extension DetailsTableViewCell: UICollectionViewDelegate, UICollectionViewDataSo
         return cell
     }
     
-    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        callBackToMovieDetailsVC!(indexPath.item)
+    }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         return CGSize(width: collectionView.frame.width/3, height: collectionView.frame.height)

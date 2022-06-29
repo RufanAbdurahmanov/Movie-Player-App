@@ -11,9 +11,12 @@ class PersonViewModel {
     
     var person: Person!
     var personID: Int!
-    init() {}
-    init(id: Int) { self.personID = id }
     
+    init() {}
+    
+    init(id: Int) {
+        personID = id
+    }
     
     func getPerson(complete: @escaping()->()) {
         WebService.shared.getPerson(id: personID) { [unowned self] person in

@@ -1,20 +1,28 @@
 PODS:
   - Alamofire (5.6.1)
+  - Cosmos (23.0.0)
+  - PanModal (1.2.7)
   - youtube-ios-player-helper (1.0.4)
 
 DEPENDENCIES:
   - Alamofire
+  - Cosmos
+  - PanModal
   - youtube-ios-player-helper
 
 SPEC REPOS:
   trunk:
     - Alamofire
+    - Cosmos
+    - PanModal
     - youtube-ios-player-helper
 
 SPEC CHECKSUMS:
   Alamofire: 87bd8c952f9a4454320fce00d9cc3de57bcadaf5
+  Cosmos: b5c6a9a637e28a061b54c8f8b1d8529d7d4db73f
+  PanModal: 3e16ead1a907fb06f4df3f13492fd00149fa4974
   youtube-ios-player-helper: e9b97535e816db3152179d84d999bc1807ecd689
 
-PODFILE CHECKSUM: 8a7633f458db70114aec304eed8951b0a255aea2
+PODFILE CHECKSUM: e507e1a1fd0d15fdb5fe3c3c8bb70308e2d88006
 
 COCOAPODS: 1.11.3

@@ -19,7 +19,7 @@ class MovieViewModel {
             for movie in trendingMovies {
                 movieItems.append(CellItem(id: movie.id, title: movie.originalTitle, url: movie.backdropPath, voteAvarage: movie.voteAverage, releaseDate: movie.releaseDate))
             }
-            movies.append(Items(title: "Trending movies", cellItems: movieItems))
+            movies.append(Items(title: "Daily Trending Movies", cellItems: movieItems))
             movieItems.removeAll()
             complete()
         }
@@ -32,7 +32,7 @@ class MovieViewModel {
             for movie in nowPlayingMovies {
                 movieItems.append(CellItem(id: movie.id, title: movie.originalTitle, url: movie.backdropPath, voteAvarage: movie.voteAverage, releaseDate: movie.releaseDate))
             }
-            movies.append(Items(title: "Now-playing movies", cellItems: movieItems))
+            movies.append(Items(title: "Now-Playing Movies", cellItems: movieItems))
             movieItems.removeAll()
             complete()
         }
@@ -43,7 +43,7 @@ class MovieViewModel {
             for movie in popularMovies {
                 movieItems.append(CellItem(id: movie.id, title: movie.originalTitle, url: movie.backdropPath, voteAvarage: movie.voteAverage, releaseDate: movie.releaseDate))
             }
-            movies.append(Items(title: "Popular movies", cellItems: movieItems))
+            movies.append(Items(title: "Popular Movies", cellItems: movieItems))
             movieItems.removeAll()
             complete()
         }
@@ -54,7 +54,7 @@ class MovieViewModel {
             for movie in topRatedMovies {
                 movieItems.append(CellItem(id: movie.id, title: movie.originalTitle, url: movie.backdropPath, voteAvarage: movie.voteAverage, releaseDate: movie.releaseDate))
             }
-            movies.append(Items(title: "Top-rated movies", cellItems: movieItems))
+            movies.append(Items(title: "Top-Rated Movies", cellItems: movieItems))
             movieItems.removeAll()
             complete()
         }

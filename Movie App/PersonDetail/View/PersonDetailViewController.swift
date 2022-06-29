@@ -8,7 +8,7 @@
 import UIKit
 
 class PersonViewController: UIViewController {
-
+    
     @IBOutlet weak var tableView: UITableView!
     let cellID = "\(PersonTableViewCell.self)"
     
@@ -17,15 +17,16 @@ class PersonViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         view.setTwoGradient(colorOne: UIColor.lightBlueColor, colorTwo: UIColor.darkBlueColor)
-
+        
         tableView.backgroundColor = UIColor.clear
         tableView.register(UINib(nibName: cellID, bundle: nil), forCellReuseIdentifier: cellID)
         viewModel.getPerson {
             self.tableView.reloadData()
+            self.title = self.viewModel.person.name
         }
     }
-    
 }
+    
 
 extension PersonViewController: UITableViewDelegate, UITableViewDataSource {
     

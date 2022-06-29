@@ -9,7 +9,6 @@ import Foundation
 
 
 class PlayerViewModel {
-    
     var videos = [VideoResult]()
     
     init() {}

@@ -9,5 +9,7 @@ target 'Movie App' do
 
   pod ‘Alamofire’
   pod ‘youtube-ios-player-helper’
+  pod ‘Cosmos’
+  pod 'PanModal'
 
 end

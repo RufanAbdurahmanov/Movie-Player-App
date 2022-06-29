@@ -6,12 +6,17 @@
 //
 import Alamofire
 
+enum NetworkMethod: String {
+    case get = "GET"
+    case post = "POST"
+}
+
 class NetworkRequest {
     static let shared = NetworkRequest()
     
-    func requestAPI<T: Decodable>(type: T.Type, url: String, params: [String: Any] = [:], completion: @escaping(T)->()) {
+    func requestAPI<T: Decodable>(type: T.Type, method: NetworkMethod = .get, url: String, params: [String: Any] = [:], completion: @escaping(T)->()) {
         AF.request(url,
-                   method: .get,
+                   method: HTTPMethod(rawValue: method.rawValue),
                    parameters: params,
                    encoding: URLEncoding.default,
                    headers: nil,

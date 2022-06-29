@@ -30,7 +30,6 @@ class CollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var dateLabel: UILabel!
     
-    //var cellItemCallback: ((Int)->())?
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -47,7 +46,7 @@ class CollectionViewCell: UICollectionViewCell {
         self.imageView.loadImage(imageURL: data.url ?? "")
         self.dateLabel.text = data.releaseDate
         self.nameLabel.text = data.title
-        self.ratingLabel.text = "\(data.voteAvarage ?? 0.0)"
+        self.ratingLabel.text = "\(round((data.voteAvarage ?? 0.0)*10)/10.0)"
     }
     
 //    func setGradient() {

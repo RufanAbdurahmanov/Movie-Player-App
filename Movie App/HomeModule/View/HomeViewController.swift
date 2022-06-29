@@ -69,6 +69,8 @@ class HomeViewController: UIViewController {
             }
         }
     }
+    
+    
 }
 
 extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
@@ -94,9 +96,10 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
             let detailsID = "\(MovieDetailsViewController.self)"
             let detailsVC = self.storyboard?.instantiateViewController(withIdentifier: detailsID) as! MovieDetailsViewController
             if self.segmentedControl.selectedSegmentIndex == 0 {
-                detailsVC.viewModel = MovieDetailsViewModel(id: self.movieViewModel.movies[indexPath.row].cellItems[index].id!)
+                detailsVC.viewModel = MovieDetailsViewModel(id: self.movieViewModel.movies[indexPath.row].cellItems[index].id!, name: self.movieViewModel.movies[indexPath.row].cellItems[index].title!)
+                self.navigationController?.show(detailsVC, sender: nil)
             }
-            self.navigationController?.show(detailsVC, sender: nil)
+            
         }
         return cell
     }

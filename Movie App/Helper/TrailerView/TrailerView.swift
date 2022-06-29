@@ -11,6 +11,7 @@ class TrailerView: UIView {
     @IBOutlet weak var collectionView: UICollectionView!
     
     var viewModel = PlayerViewModel()
+    var callBackForVideoID: ((VideoResult)->())?
     let cellID = "\(PlayerCollectionViewCell.self)"
     
     override func layoutSubviews() {
@@ -20,6 +21,7 @@ class TrailerView: UIView {
     
     func configure(id: String) {
         viewModel.getMovieVideos(id: id) {
+            self.callBackForVideoID?(self.viewModel.videos[0])
             self.collectionView.reloadData()
         }
     }
@@ -34,6 +36,10 @@ extension TrailerView: UICollectionViewDelegate, UICollectionViewDataSource, UIC
         cell.configure(id: viewModel.videos[indexPath.item].key ?? "")
         return cell
     }
+    
+    func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
+        callBackForVideoID?(viewModel.videos[Int(scrollView.contentOffset.x / scrollView.frame.width)])
+       }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         CGSize(width: collectionView.bounds.width, height: collectionView.bounds.height)
