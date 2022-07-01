@@ -23,6 +23,8 @@ protocol WebServiceProtocol {
     func getMovieDetails(id: Int, complete: @escaping(MovieDetails)->())
     func getMovieVideos(id: String, complete: @escaping([VideoResult])->())
     func getMovieCasts(id: Int, complete: @escaping([MovieCast])->())
+    func getSimiliarMovies(id: Int, complete: @escaping([SimiliarMoviesResult])->())
+    func getPersonFilmography(id: Int, complete: @escaping([Cast])->())
     func getPerson(id: Int, complete: @escaping(Person)->())
     
     func getDiscoverMovies(page: Int, complete: @escaping([DiscoverResult])->())
@@ -121,12 +123,27 @@ class WebService: WebServiceProtocol {
         }
     }
     
+    func getSimiliarMovies(id: Int, complete: @escaping([SimiliarMoviesResult])->()) {
+        let url = "\(baseURL.url.rawValue)\(MediaType.movie.type)/\(id)/similar?api_key=\(apiKey.key.rawValue)&language=en-US"
+        NetworkRequest.shared.requestAPI(type: SimiliarMovies.self, url: url) { response in
+            complete(response.results!)
+        }
+    }
+    
     func getPerson(id: Int, complete: @escaping(Person)->()) {
         let url = "\(baseURL.url.rawValue)/person/\(id)?api_key=\(apiKey.key.rawValue)&language=en-US"
         NetworkRequest.shared.requestAPI(type: Person.self, url: url) { person in
             complete(person)
         }
     }
+    
+    func getPersonFilmography(id: Int, complete: @escaping([Cast])->()) {
+        let url = "\(baseURL.url.rawValue)/person/\(id)/movie_credits?api_key=\(apiKey.key.rawValue)&language=en-US"
+        NetworkRequest.shared.requestAPI(type: Filmography.self, url: url) { movies in
+            complete(movies.cast ?? [])
+        }
+    }
+
     
     func getDiscoverMovies(page: Int, complete: @escaping([DiscoverResult])->()){
         let url = "\(baseURL.url.rawValue)/discover/movie?api_key=\(apiKey.key.rawValue)&language=en-US&sort_by=popularity.desc&include_adult=false&include_video=true&page=1&with_watch_monetization_types=flatrate"

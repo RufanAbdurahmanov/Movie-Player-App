@@ -27,8 +27,14 @@ class DetailsTableViewCell: UITableViewCell {
     @IBOutlet weak private var castCollectionView: UICollectionView!
     @IBOutlet weak private var releaseDateLabel: UILabel!
     
+    @IBOutlet weak var similiarMoviesLabel: UILabel!
+    
+    @IBOutlet weak var similiarMoviesCollectionView: UICollectionView!
+    
     var castss = [MovieCast]()
+    var similarMovies = [SimiliarMoviesResult]()
     var cellID = "\(MovieCastCollectionViewCell.self)"
+    var similarMoviesCellID = "\(CollectionViewCell.self)"
     
     var trailerView = Bundle.main.loadNibNamed("\(TrailerView.self)", owner: nil)?.first as! TrailerView
     
@@ -41,6 +47,8 @@ class DetailsTableViewCell: UITableViewCell {
         starImageView.image = UIImage(systemName: "star.fill")
         clockImageView.image = UIImage(systemName: "clock")
         castCollectionView.register(UINib(nibName: cellID, bundle: nil), forCellWithReuseIdentifier: cellID)
+        similiarMoviesCollectionView.register(UINib(nibName: similarMoviesCellID, bundle: nil), forCellWithReuseIdentifier: similarMoviesCellID)
+        similiarMoviesCollectionView.backgroundColor = .clear
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
@@ -56,10 +64,12 @@ class DetailsTableViewCell: UITableViewCell {
         }
     }
     
-    func configure(id: String, details: MovieDetails, casts: [MovieCast]) {
+    func configure(id: String, details: MovieDetails, casts: [MovieCast], similarMovies: [SimiliarMoviesResult]) {
         self.castss = casts
+        self.similarMovies = similarMovies
         trailerView.configure(id: id)
         castCollectionView.reloadData()
+        similiarMoviesCollectionView.reloadData()
         
         var companyName = ""
         var categories = ""
@@ -85,30 +95,53 @@ class DetailsTableViewCell: UITableViewCell {
         overviewLabel.text = details.overview ?? ""
         releaseDateLabel.text = details.releaseDate ?? ""
     }
-    var callback: (()->())?
+    var callbackSeeAllCast: (()->())?
     @IBAction func seeAllButton(_ sender: Any) {
-        callback!()
+        callbackSeeAllCast!()
+    }
+    var callbackSeeAllSimilarMovies: (()->())?
+    @IBAction func seeAllMoviesButton(_ sender: Any) {
+        callbackSeeAllSimilarMovies!()
     }
     
-    var callBackToMovieDetailsVC:((Int)->())?
+    
+    var callBackToMovieDetailsVCForCasts:((Int)->())?
+    var callBackToMovieDetailsVCForMovies:((SimiliarMoviesResult)->())?
 }
 
 extension DetailsTableViewCell: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return castss.count
+        if collectionView == castCollectionView {
+            return castss.count
+        } else {
+            return similarMovies.count
+        }
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        if collectionView == castCollectionView {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellID, for: indexPath) as! MovieCastCollectionViewCell
         if !castss.isEmpty {
             cell.configure(cast: castss[indexPath.item])
         }
-        return cell
+            return cell
+        } else {
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: similarMoviesCellID, for: indexPath) as! CollectionViewCell
+            if !similarMovies.isEmpty {
+                cell.configure(data: similarMovies[indexPath.item])
+            }
+            return cell
+        }
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        callBackToMovieDetailsVC!(indexPath.item)
+        
+        if collectionView == castCollectionView {
+            callBackToMovieDetailsVCForCasts!(indexPath.item)
+        } else {
+            callBackToMovieDetailsVCForMovies!(similarMovies[indexPath.item])
+        }
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {

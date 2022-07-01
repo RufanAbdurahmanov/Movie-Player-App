@@ -24,7 +24,9 @@ class DownloadsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        view.setTwoGradient(colorOne: UIColor.lightBlueColor, colorTwo: UIColor.darkBlueColor)
+        //view.setTwoGradient(colorOne: UIColor.lightBlueColor, colorTwo: UIColor.darkBlueColor)
+        view.backgroundColor = UIColor.darkBlueColor
+
         collectionView.register(UINib(nibName: cellID, bundle: nil), forCellWithReuseIdentifier: cellID)
         getDownloads()
         addRefreshControll()

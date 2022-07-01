@@ -18,8 +18,8 @@
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Today's Trendings" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ca6-ly-8uX">
-                        <rect key="frame" x="8" y="3.5" width="187.5" height="25"/>
-                        <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="21"/>
+                        <rect key="frame" x="8" y="3.5" width="182" height="25"/>
+                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="22"/>
                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <nil key="highlightedColor"/>
                     </label>
@@ -82,7 +82,7 @@
     </objects>
     <resources>
         <namedColor name="redColor">
-            <color red="0.9179999828338623" green="0.20000000298023224" blue="0.25900000333786011" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.98431372549019602" green="0.0" blue="0.17254901960784313" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
     </resources>
 </document>

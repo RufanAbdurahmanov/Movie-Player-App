@@ -40,19 +40,12 @@ class CollectionViewCell: UICollectionViewCell {
         layer.cornerRadius = 5
         
     }
-
     
-    func configure(data: CellItem) {
+    func configure(data: CellProtocol) {
         self.imageView.loadImage(imageURL: data.url ?? "")
-        self.dateLabel.text = data.releaseDate
-        self.nameLabel.text = data.title
-        self.ratingLabel.text = "\(round((data.voteAvarage ?? 0.0)*10)/10.0)"
+        self.dateLabel.text = data.date
+        self.nameLabel.text = data.cellTitle
+        self.ratingLabel.text = "\(round((data.vote ?? 0.0)*10)/10.0)"
     }
     
-//    func setGradient() {
-//        let gradient = CAGradientLayer()
-//        gradient.colors = [ UIColor.clear.cgColor, UIColor.systemBackground.cgColor]
-//        gradient.frame = imageView.bounds
-//        imageView.layer.addSublayer(gradient)
-//    }
 }

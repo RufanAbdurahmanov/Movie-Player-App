@@ -11,6 +11,7 @@ class PersonViewModel {
     
     var person: Person!
     var personID: Int!
+    var personMovies = [Cast]()
     
     init() {}
     
@@ -24,6 +25,11 @@ class PersonViewModel {
             complete()
         }
     }
-    
+    func getPersonFilmography(complete: @escaping()->()) { 
+        WebService.shared.getPersonFilmography(id: personID) { [unowned self] casts in
+            self.personMovies = casts
+            complete()
+        }
+    }
     
 }

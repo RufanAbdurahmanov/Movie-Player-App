@@ -13,10 +13,15 @@ struct Items{
     var cellItems: [CellItem]
 }
 
-struct CellItem {
+struct CellItem: CellProtocol{
     let id: Int?
+    var cellId: Int? { return id }
     let title: String?
+    var cellTitle: String? { return title }
     let url: String?
+    var cellUrl: String? { return url }
     let voteAvarage: Double?
+    var vote: Double? { return voteAvarage }
     let releaseDate: String?
+    var date: String? { return releaseDate }
 }

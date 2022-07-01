@@ -12,6 +12,7 @@ class MovieDetailsViewModel {
     
     var movieDetails: MovieDetails?
     var movieCasts = [MovieCast]()
+    var similarMovies = [SimiliarMoviesResult]()
     var movieName: String!
     fileprivate let mainQueue = OperationQueue.main
     
@@ -34,6 +35,13 @@ class MovieDetailsViewModel {
     func getCasts(complete: @escaping()->()) {
         WebService.shared.getMovieCasts(id: id) { casts in
             self.movieCasts = casts
+            complete()
+        }
+    }
+    
+    func getSilimiarMovies(complete: @escaping()->()) {
+        WebService.shared.getSimiliarMovies(id: id) { movies in
+            self.similarMovies = movies
             complete()
         }
     }

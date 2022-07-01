@@ -27,7 +27,8 @@ class MovieDetailsViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.setTwoGradient(colorOne: UIColor.lightBlueColor, colorTwo: UIColor.darkBlueColor)
+        //view.setTwoGradient(colorOne: UIColor.lightBlueColor, colorTwo: UIColor.darkBlueColor)
+        view.backgroundColor = UIColor.darkBlueColor
         
         getDatas()
         tableView.register(UINib(nibName: cellID, bundle: nil), forCellReuseIdentifier: cellID)
@@ -35,8 +36,8 @@ class MovieDetailsViewController: UIViewController {
         
         let rateMovieButton = UIBarButtonItem(title: "Rate", style: .plain, target: self, action: #selector(rateMovie))
         let downloadButton = UIBarButtonItem(image: UIImage(systemName: "arrow.down.to.line.compact"), style: .plain, target: self, action: #selector(downloadMovie))
-        downloadButton.tintColor = #colorLiteral(red: 0.9179999828, green: 0.200000003, blue: 0.2590000033, alpha: 1)
-        rateMovieButton.tintColor = #colorLiteral(red: 0.9179999828, green: 0.200000003, blue: 0.2590000033, alpha: 1)
+        downloadButton.tintColor = #colorLiteral(red: 0.9840000272, green: 0, blue: 0.172999993, alpha: 1)
+        rateMovieButton.tintColor = #colorLiteral(red: 0.9840000272, green: 0, blue: 0.172999993, alpha: 1)
         navigationItem.rightBarButtonItems = [downloadButton, rateMovieButton]
         
     }
@@ -105,7 +106,9 @@ class MovieDetailsViewController: UIViewController {
     func getDatas() {
         self.viewModel.getMovieDetails{
             self.viewModel.getCasts {
-                self.tableView.reloadData()
+                self.viewModel.getSilimiarMovies {
+                    self.tableView.reloadData()
+                }
             }
         }
     }
@@ -125,21 +128,34 @@ extension MovieDetailsViewController: UITableViewDelegate, UITableViewDataSource
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: cellID, for: indexPath) as! DetailsTableViewCell
         if viewModel.movieDetails != nil {
-            cell.configure(id: "\(viewModel.id ?? 0)", details: viewModel.movieDetails!, casts: viewModel.movieCasts)
+            cell.configure(id: "\(viewModel.id ?? 0)", details: viewModel.movieDetails!, casts: viewModel.movieCasts, similarMovies: viewModel.similarMovies)
         }
-        cell.callback = { [self] in
+        cell.callbackSeeAllCast = { [self] in
             let personsDetailVC = self.storyboard?.instantiateViewController(withIdentifier: "\(PersonsDetailViewController.self)") as! PersonsDetailViewController
             personsDetailVC.viewModel = PersonsDetailViewModel(casts: viewModel.movieCasts)
             self.navigationController?.show(personsDetailVC, sender: nil)
+        }
+        cell.callbackSeeAllSimilarMovies = { [self] in
+            let seeAllMoviesVC = storyboard?.instantiateViewController(withIdentifier: "\(SeeAllMoviesViewController.self)") as! SeeAllMoviesViewController
+            seeAllMoviesVC.viewModel = SeeAllMoviesViewModel(movies: viewModel.similarMovies)
+            self.navigationController?.show(seeAllMoviesVC, sender: nil)
         }
         cell.callBackToMovieDetails = { item in
             self.item = item
         }
         
-        cell.callBackToMovieDetailsVC = { index in
+        cell.callBackToMovieDetailsVCForCasts = { index in
             let personVC = self.storyboard?.instantiateViewController(withIdentifier: "\(PersonViewController.self)") as! PersonViewController
             personVC.viewModel = PersonViewModel(id: self.viewModel.movieCasts[index].id ?? 0)
             self.navigationController?.show(personVC, sender: nil)
+        }
+        
+        cell.callBackToMovieDetailsVCForMovies =  { movie in
+            let detailsID = "\(MovieDetailsViewController.self)"
+            let detailsVC = self.storyboard?.instantiateViewController(withIdentifier: detailsID) as! MovieDetailsViewController
+            
+            detailsVC.viewModel = MovieDetailsViewModel(id: movie.cellId!, name: movie.cellTitle!)
+            self.navigationController?.show(detailsVC, sender: nil)
         }
         
         return cell
