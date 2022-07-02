@@ -13,7 +13,7 @@ struct MovieDetails: Codable {
     let backdropPath: String?
     let belongsToCollection: BelongsToCollection?
     let budget: Int?
-    let genres: [Genre]?
+    let genres: [MovieGenre]?
     let homepage: String?
     let id: Int?
     let imdbID, originalLanguage, originalTitle, overview: String?
@@ -62,8 +62,8 @@ struct BelongsToCollection: Codable {
     }
 }
 
-// MARK: - Genre
-struct Genre: Codable {
+// MARK: - MovieGenre
+struct MovieGenre: Codable {
     let id: Int?
     let name: String?
 }

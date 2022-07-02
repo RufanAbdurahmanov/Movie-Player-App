@@ -130,6 +130,7 @@ extension DetailsTableViewCell: UICollectionViewDelegate, UICollectionViewDataSo
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: similarMoviesCellID, for: indexPath) as! CollectionViewCell
             if !similarMovies.isEmpty {
                 cell.configure(data: similarMovies[indexPath.item])
+                cell.backgroundColor = .lightBlueColor.withAlphaComponent(0.3)
             }
             return cell
         }

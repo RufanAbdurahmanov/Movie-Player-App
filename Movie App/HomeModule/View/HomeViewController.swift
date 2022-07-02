@@ -90,18 +90,24 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
             cell.configureCell(viewModel: CellsViewModel(title: movieViewModel.movies[indexPath.item].title, items: movieViewModel.movies[indexPath.item].cellItems))
         } else {
             cell.configureCell(viewModel: CellsViewModel(title: tvShowsViewModel.tvShows[indexPath.item].title, items: tvShowsViewModel.tvShows[indexPath.row].cellItems))
-            
-            
         }
+        
         cell.cellTapCallback = { index in
             let detailsID = "\(MovieDetailsViewController.self)"
             let detailsVC = self.storyboard?.instantiateViewController(withIdentifier: detailsID) as! MovieDetailsViewController
             if self.segmentedControl.selectedSegmentIndex == 0 {
-                detailsVC.viewModel = MovieDetailsViewModel(id: self.movieViewModel.movies[indexPath.row].cellItems[index].id!, name: self.movieViewModel.movies[indexPath.row].cellItems[index].title!)
+                detailsVC.viewModel = MovieDetailsViewModel(id: self.movieViewModel.movies[indexPath.item].cellItems[indexPath.item].id!, name: self.movieViewModel.movies[indexPath.item].cellItems[indexPath.item].title!)
                 self.navigationController?.show(detailsVC, sender: nil)
             }
             
         }
+        
+        cell.callBackForSeeAllMovies = {
+            let seeAllMoviesVC = self.storyboard?.instantiateViewController(withIdentifier: "\(SeeAllMoviesViewController.self)") as! SeeAllMoviesViewController
+            seeAllMoviesVC.viewModel = SeeAllMoviesViewModel(movies: self.movieViewModel.movies[indexPath.item].cellItems)
+            self.navigationController?.show(seeAllMoviesVC, sender: nil)
+        }
+        
         return cell
     }
     

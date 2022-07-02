@@ -34,9 +34,10 @@ class HomeCollectionViewCell: UICollectionViewCell {
         collectionView.reloadData()
     }
 
+    var callBackForSeeAllMovies: (()->())?
     
     @IBAction private func seeAllButton(_ sender: Any) {
-        print("see all tapped")
+        callBackForSeeAllMovies!()
     }
 }
 

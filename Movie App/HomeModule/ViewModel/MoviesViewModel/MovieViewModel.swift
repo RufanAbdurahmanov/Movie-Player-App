@@ -60,14 +60,4 @@ class MovieViewModel {
         }
     }
     
-//    func getDiscoverMovies(complete: @escaping()->()) {
-//        WebService.shared.getDiscoverMovies(page: 1) { [unowned self] discoverMovies in
-//            for movie in discoverMovies {
-//                movieItems.append(MovieItem(id: movie.id, title: movie.originalTitle, url: movie.backdropPath, voteAvarage: movie.voteAverage, releaseDate: movie.releaseDate))
-//            }
-//            movies.append(Movies(title: "Discover movies", movieItems: movieItems))
-//            movieItems.removeAll()
-//            complete()
-//        }
-//    }
 }

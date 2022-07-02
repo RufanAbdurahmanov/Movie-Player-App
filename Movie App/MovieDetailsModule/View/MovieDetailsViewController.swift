@@ -53,7 +53,7 @@ class MovieDetailsViewController: UIViewController {
                 panmodalVC.progress = Float(progress ?? 0.0)
             } else {
                 panmodalVC.progress = Float(progress ?? 0.0)
-                self.tabBarController?.selectedIndex = 2
+                self.tabBarController?.selectedIndex = 3
             }
         }
         panmodalVC.cancelCallBack = {

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="GenreCollectionViewCell" customModule="Movie_App" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="195" height="121"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="195" height="121"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fpt-43-PBq">
+                        <rect key="frame" x="0.0" y="0.0" width="195" height="121"/>
+                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="20"/>
+                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+            </view>
+            <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
+            <constraints>
+                <constraint firstAttribute="bottom" secondItem="fpt-43-PBq" secondAttribute="bottom" id="ANp-A3-vRq"/>
+                <constraint firstAttribute="trailing" secondItem="fpt-43-PBq" secondAttribute="trailing" id="EHd-Mp-IdQ"/>
+                <constraint firstItem="fpt-43-PBq" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="kz7-bJ-1Ff"/>
+                <constraint firstItem="fpt-43-PBq" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="t9I-e6-8RN"/>
+            </constraints>
+            <size key="customSize" width="195" height="121"/>
+            <connections>
+                <outlet property="nameLabel" destination="fpt-43-PBq" id="k20-gB-bEj"/>
+            </connections>
+            <point key="canvasLocation" x="242.75362318840581" y="137.61160714285714"/>
+        </collectionViewCell>
+    </objects>
+</document>

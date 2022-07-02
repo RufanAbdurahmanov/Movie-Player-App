@@ -31,7 +31,7 @@ extension SeeAllMoviesViewController: UICollectionViewDelegate, UICollectionView
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellID, for: indexPath) as! CollectionViewCell
-        cell.backgroundColor = .lightBlueColor
+        cell.backgroundColor = .lightBlueColor.withAlphaComponent(0.3)
         cell.configure(data: viewModel.movies[indexPath.item])
         return cell
     }
