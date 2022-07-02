@@ -15,8 +15,10 @@ class DownloadsCollectionViewCell: UICollectionViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
-        backgroundColor = #colorLiteral(red: 0.1568627451, green: 0.2, blue: 0.2509803922, alpha: 1).withAlphaComponent(0.5)
-        //backgroundColor = .clear
+        backgroundColor = .lightBlueColor.withAlphaComponent(0.3)
+        layer.cornerRadius = 6
+        layer.borderWidth = 0.07
+        layer.borderColor = UIColor.white.cgColor
     }
     
     func configure(item: DownloadedTrailerModel) {

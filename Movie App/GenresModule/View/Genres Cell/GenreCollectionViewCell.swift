@@ -16,7 +16,7 @@ class GenreCollectionViewCell: UICollectionViewCell {
 
         backgroundColor = .lightBlueColor.withAlphaComponent(0.3)
         layer.cornerRadius = 6
-        layer.borderWidth = 0.12
+        layer.borderWidth = 0.07
         layer.borderColor = UIColor.white.cgColor
     }
 

@@ -71,7 +71,6 @@ class HomeViewController: UIViewController {
         }
     }
     
-    
 }
 
 extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {

@@ -27,7 +27,6 @@ class MovieDetailsViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        //view.setTwoGradient(colorOne: UIColor.lightBlueColor, colorTwo: UIColor.darkBlueColor)
         view.backgroundColor = UIColor.darkBlueColor
         
         getDatas()
@@ -39,7 +38,6 @@ class MovieDetailsViewController: UIViewController {
         downloadButton.tintColor = #colorLiteral(red: 0.9840000272, green: 0, blue: 0.172999993, alpha: 1)
         rateMovieButton.tintColor = #colorLiteral(red: 0.9840000272, green: 0, blue: 0.172999993, alpha: 1)
         navigationItem.rightBarButtonItems = [downloadButton, rateMovieButton]
-        
     }
     
     var item: VideoResult!

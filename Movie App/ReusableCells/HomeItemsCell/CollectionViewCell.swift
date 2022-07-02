@@ -35,9 +35,10 @@ class CollectionViewCell: UICollectionViewCell {
         super.awakeFromNib()
         // Initialization code
         
-        layer.borderWidth = 0.25
-        layer.borderColor = UIColor.black.cgColor
-        layer.cornerRadius = 5
+        backgroundColor = .lightBlueColor.withAlphaComponent(0.3)
+        layer.cornerRadius = 6
+        layer.borderWidth = 0.07
+        layer.borderColor = UIColor.white.cgColor
         
     }
     

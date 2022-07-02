@@ -12,6 +12,8 @@ import AVFoundation
 class DownloadsViewController: UIViewController {
     
     let refreshControl = UIRefreshControl()
+    
+    
 
     @IBOutlet weak var collectionView: UICollectionView!
     let cellID = "\(DownloadsCollectionViewCell.self)"
@@ -23,7 +25,7 @@ class DownloadsViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        title = "Downloads"
         //view.setTwoGradient(colorOne: UIColor.lightBlueColor, colorTwo: UIColor.darkBlueColor)
         view.backgroundColor = UIColor.darkBlueColor
 

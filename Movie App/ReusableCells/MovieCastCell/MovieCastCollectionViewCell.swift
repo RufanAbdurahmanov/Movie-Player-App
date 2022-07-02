@@ -29,8 +29,10 @@ class MovieCastCollectionViewCell: UICollectionViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+        backgroundColor = .lightBlueColor.withAlphaComponent(0.3)
         layer.cornerRadius = 6
-        backgroundColor = .lightBlueColor
+        layer.borderWidth = 0.07
+        layer.borderColor = UIColor.white.cgColor
     }
     
     func configure(cast: MovieCastProtocol) {

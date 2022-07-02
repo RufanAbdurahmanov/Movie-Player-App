@@ -15,7 +15,7 @@ class GenresViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        navigationItem.title = "Discover Movies"
         view.backgroundColor = .darkBlueColor
         collectionView.backgroundColor = .clear
         
