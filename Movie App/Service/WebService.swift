@@ -28,6 +28,7 @@ protocol WebServiceProtocol {
     func getPerson(id: Int, complete: @escaping(Person)->())
     
     func getDiscoverMovies(genreID: Int, page: Int, complete: @escaping([DiscoverResult])->())
+    func searchMovies(query: String, complete: @escaping([SearchResult])->())
     
     func getUpcomingMovies(page: Int, complete: @escaping([UpcomingMovieResult])->())
     
@@ -152,6 +153,12 @@ class WebService: WebServiceProtocol {
         }
     }
     
+    func searchMovies(query: String, complete: @escaping([SearchResult])->()){
+        let url = "\(baseURL.url.rawValue)/search/movie?api_key=\(apiKey.key.rawValue)&query=\(query)&page=1&language=en-US"
+        NetworkRequest.shared.requestAPI(type: SearchModel.self, url: url) { response in
+            complete(response.results ?? [])
+        }
+    }
     
     func getUpcomingMovies(page: Int, complete: @escaping([UpcomingMovieResult])->()) {
         let url = "\(baseURL.url.rawValue)/movie/upcoming?api_key=\(apiKey.key.rawValue)&language=en-US&page=\(page)"

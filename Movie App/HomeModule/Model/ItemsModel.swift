@@ -7,13 +7,12 @@
 
 import Foundation
 
-
-struct Items{
+struct Items {
     var title: String
     var cellItems: [CellItem]
 }
 
-struct CellItem: CellProtocol{
+struct CellItem: CellProtocol {
     let id: Int?
     var cellId: Int? { return id }
     let title: String?

@@ -45,15 +45,14 @@ extension PanModalViewController: PanModalPresentable {
     }
     
     var shortFormHeight: PanModalHeight {
-        return .contentHeight(165)
+        return .contentHeight(200)
     }
     
     var longFormHeight: PanModalHeight {
-        return .maxHeightWithTopInset(self.view.frame.height-165)
+        return .maxHeightWithTopInset(view.frame.height-200)
     }
     
     var anchorModalToLongForm: Bool {
         return false
     }
-    
 }

@@ -10,6 +10,7 @@ import UIKit
 class SeeAllMoviesViewController: UIViewController {
 
     @IBOutlet weak var collectionView: UICollectionView!
+    
     let cellID = "\(CollectionViewCell.self)"
     var viewModel = SeeAllMoviesViewModel()
     
@@ -19,8 +20,6 @@ class SeeAllMoviesViewController: UIViewController {
         collectionView.backgroundColor = .clear
         collectionView.register(UINib(nibName: cellID, bundle: nil), forCellWithReuseIdentifier: cellID)
     }
-    
-
 }
 
 extension SeeAllMoviesViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
@@ -48,7 +47,4 @@ extension SeeAllMoviesViewController: UICollectionViewDelegate, UICollectionView
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         return CGSize(width: collectionView.frame.width / 2 - 10, height: 240)
     }
-    
-    
-    
 }

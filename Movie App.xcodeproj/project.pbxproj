@@ -62,6 +62,9 @@
 		5CA49F3C284C17A700384A82 /* MovieViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CA49F3B284C17A700384A82 /* MovieViewModel.swift */; };
 		5CABBA7D286DBAAB00890A87 /* SeeAllMoviesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CABBA7C286DBAAB00890A87 /* SeeAllMoviesViewController.swift */; };
 		5CABBA84286DBE0D00890A87 /* SeeAllMoviesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CABBA83286DBE0D00890A87 /* SeeAllMoviesViewModel.swift */; };
+		5CC4F0542872BA8F008E4DA6 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CC4F0532872BA8F008E4DA6 /* SearchViewController.swift */; };
+		5CC4F05A2872BF67008E4DA6 /* SearchModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CC4F0592872BF67008E4DA6 /* SearchModel.swift */; };
+		5CC4F05C2872C0A9008E4DA6 /* SearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CC4F05B2872C0A9008E4DA6 /* SearchViewModel.swift */; };
 		5CCD70BC2846297400B5E19B /* WebService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CCD70BB2846297400B5E19B /* WebService.swift */; };
 		5CCD70BE284629F900B5E19B /* WebServiceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CCD70BD284629F900B5E19B /* WebServiceManager.swift */; };
 		5CCD70C02846449600B5E19B /* TrendingMovieModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CCD70BF2846449600B5E19B /* TrendingMovieModel.swift */; };
@@ -149,6 +152,9 @@
 		5CA49F3B284C17A700384A82 /* MovieViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieViewModel.swift; sourceTree = "<group>"; };
 		5CABBA7C286DBAAB00890A87 /* SeeAllMoviesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeeAllMoviesViewController.swift; sourceTree = "<group>"; };
 		5CABBA83286DBE0D00890A87 /* SeeAllMoviesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeeAllMoviesViewModel.swift; sourceTree = "<group>"; };
+		5CC4F0532872BA8F008E4DA6 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
+		5CC4F0592872BF67008E4DA6 /* SearchModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchModel.swift; sourceTree = "<group>"; };
+		5CC4F05B2872C0A9008E4DA6 /* SearchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewModel.swift; sourceTree = "<group>"; };
 		5CCD70BB2846297400B5E19B /* WebService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebService.swift; sourceTree = "<group>"; };
 		5CCD70BD284629F900B5E19B /* WebServiceManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebServiceManager.swift; sourceTree = "<group>"; };
 		5CCD70BF2846449600B5E19B /* TrendingMovieModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrendingMovieModel.swift; sourceTree = "<group>"; };
@@ -299,9 +305,9 @@
 		5C418AE928703914008BC547 /* DiscoverModule */ = {
 			isa = PBXGroup;
 			children = (
-				5C418AFB28704D01008BC547 /* ViewModel */,
 				5C418AFA28704CFC008BC547 /* Model */,
 				5C418AF928704CF6008BC547 /* View */,
+				5C418AFB28704D01008BC547 /* ViewModel */,
 			);
 			path = DiscoverModule;
 			sourceTree = "<group>";
@@ -464,6 +470,7 @@
 				5CDAAA07285C68F900C0B127 /* DownloadsModule */,
 				5C418AF828704CDB008BC547 /* GenresModule */,
 				5C418AE928703914008BC547 /* DiscoverModule */,
+				5CC4F0552872BA9D008E4DA6 /* SearchModule */,
 				5C6EC5FB28450BC400A2007A /* Assets.xcassets */,
 				5C54675F2861EF030068BB9A /* Main.storyboard */,
 				5C1EF1542865864100976E80 /* PanModalViewController.swift */,
@@ -600,6 +607,40 @@
 				5CABBA83286DBE0D00890A87 /* SeeAllMoviesViewModel.swift */,
 			);
 			path = SeeAllMovies;
+			sourceTree = "<group>";
+		};
+		5CC4F0552872BA9D008E4DA6 /* SearchModule */ = {
+			isa = PBXGroup;
+			children = (
+				5CC4F0572872BDF9008E4DA6 /* Model */,
+				5CC4F0562872BDE5008E4DA6 /* View */,
+				5CC4F0582872BDFE008E4DA6 /* ViewModel */,
+			);
+			path = SearchModule;
+			sourceTree = "<group>";
+		};
+		5CC4F0562872BDE5008E4DA6 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				5CC4F0532872BA8F008E4DA6 /* SearchViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		5CC4F0572872BDF9008E4DA6 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				5CC4F0592872BF67008E4DA6 /* SearchModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		5CC4F0582872BDFE008E4DA6 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				5CC4F05B2872C0A9008E4DA6 /* SearchViewModel.swift */,
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 		5CCD70C92846852700B5E19B /* HomeCell */ = {
@@ -872,6 +913,7 @@
 				5C78D6E3284971D1002D0CFB /* TopRatedModel.swift in Sources */,
 				5CA49F3A284C125B00384A82 /* CellsViewModel.swift in Sources */,
 				5CD1928228514C580007621A /* PopularTvModel.swift in Sources */,
+				5CC4F05A2872BF67008E4DA6 /* SearchModel.swift in Sources */,
 				5C7C81B828570F6A00A4D772 /* MovieCastsModel.swift in Sources */,
 				5C6EC5F728450BC000A2007A /* HomeViewController.swift in Sources */,
 				5CD49381284D60350030C278 /* ComingSoonViewModel.swift in Sources */,
@@ -885,6 +927,7 @@
 				5CCD70BE284629F900B5E19B /* WebServiceManager.swift in Sources */,
 				5CD1928028514C470007621A /* OnTheAirTvModel.swift in Sources */,
 				5CD1928428514C690007621A /* TopRatedTvModel.swift in Sources */,
+				5CC4F0542872BA8F008E4DA6 /* SearchViewController.swift in Sources */,
 				5C867FF3285B2536008B2356 /* SubscriptionViewController.swift in Sources */,
 				5C418AEB2870393D008BC547 /* GenresViewController.swift in Sources */,
 				5C091168285750B8009E9F9F /* PersonDetailViewController.swift in Sources */,
@@ -903,6 +946,7 @@
 				5C1956CB28461D6F00322FED /* NetworkRequest.swift in Sources */,
 				5C09116C2857B015009E9F9F /* PersonViewModel.swift in Sources */,
 				5C09A0E028524A8F00A23740 /* DetailsTableViewCell.swift in Sources */,
+				5CC4F05C2872C0A9008E4DA6 /* SearchViewModel.swift in Sources */,
 				5CD192742851489E0007621A /* TVShowsViewModel.swift in Sources */,
 				5C467EAF286D6FBA00D48563 /* SimiliarMoviesModel.swift in Sources */,
 				5C6EC5F528450BC000A2007A /* SceneDelegate.swift in Sources */,

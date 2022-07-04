@@ -78,17 +78,19 @@ class DetailsTableViewCell: UITableViewCell {
         nameLabel.text = details.originalTitle ?? ""
         taglineLabel.text = details.tagline ?? ""
         
-        for company in details.productionCompanies! {
+        
+        
+        for company in details.productionCompanies ?? [] {
             companyName += "\(String(describing: company.name ?? ""))\n"
         }
         
         companiesLabel.text = companyName
-        budgetLabel.text = "$\(String(describing: details.budget!.withCommas()))"
-        revenueLabel.text = "$\(String(describing: details.revenue!.withCommas()))"
+        budgetLabel.text = "$\(String(describing: (details.budget ?? 0).withCommas()))"
+        revenueLabel.text = "$\(String(describing: (details.revenue ?? 0).withCommas()))"
         voteLabel.text = String(details.voteAverage ?? 0.0)
         runtimeLabel.text = String("\((details.runtime ?? 0)/60)h \((details.runtime ?? 0)%60)m")
         
-        for category in details.genres! {
+        for category in details.genres ?? [] {
             categories += "  \(String(describing: category.name ?? ""))"
         }
         categoriesLabel.text = categories

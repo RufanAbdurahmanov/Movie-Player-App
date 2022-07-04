@@ -26,6 +26,11 @@ class GenresViewController: UIViewController {
     }
     
     
+    @IBAction func searchButtton(_ sender: Any) {
+        let searchVC = storyboard?.instantiateViewController(withIdentifier: "\(SearchViewController.self)") as! SearchViewController
+        navigationController?.show(searchVC, sender: nil)
+    }
+    
 }
 
 extension GenresViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {

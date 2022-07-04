@@ -39,6 +39,15 @@ extension ComingSoonViewController: UICollectionViewDelegate, UICollectionViewDa
         return cell
     }
     
+//    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+//        
+//        let detailsID = "\(MovieDetailsViewController.self)"
+//        let detailsVC = self.storyboard?.instantiateViewController(withIdentifier: detailsID) as! MovieDetailsViewController
+//    
+//        detailsVC.viewModel = MovieDetailsViewModel(id: viewModel.upcomingMovies[indexPath.item].cellId ?? 0, name: viewModel.upcomingMovies[indexPath.item].cellTitle ?? "")
+//        self.navigationController?.show(detailsVC, sender: nil)
+//    }
+    
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         return CGSize(width: collectionView.frame.width, height: 110 )
     }

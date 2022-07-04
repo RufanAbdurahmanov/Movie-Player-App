@@ -18,13 +18,13 @@
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Today's Trendings" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ca6-ly-8uX">
-                        <rect key="frame" x="8" y="3.5" width="182" height="25"/>
+                        <rect key="frame" x="8" y="3.5" width="182" height="26.5"/>
                         <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="22"/>
                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="3rc-0L-7kY">
-                        <rect key="frame" x="8" y="40.5" width="471" height="219.5"/>
+                        <rect key="frame" x="8" y="42" width="471" height="218"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="PSZ-Tb-tJs">
                             <size key="itemSize" width="128" height="128"/>
@@ -41,13 +41,17 @@
                             <constraint firstAttribute="width" constant="16" id="Igm-D2-ydW"/>
                         </constraints>
                     </imageView>
-                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YQL-Aw-5kn">
-                        <rect key="frame" x="389.5" y="-1" width="72" height="34"/>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YQL-Aw-5kn">
+                        <rect key="frame" x="407" y="5" width="48" height="24"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="24" id="DUA-Oq-ptW"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
                         <color key="tintColor" name="redColor"/>
-                        <state key="normal" title="Button"/>
-                        <buttonConfiguration key="configuration" style="plain" title="See all">
-                            <fontDescription key="titleFontDescription" type="system" pointSize="16"/>
-                        </buttonConfiguration>
+                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                        <state key="normal" title="See all">
+                            <color key="titleColor" name="redColor"/>
+                        </state>
                         <connections>
                             <action selector="seeAllButton:" destination="gTV-IL-0wX" eventType="touchUpInside" id="f5n-L3-vDF"/>
                         </connections>
@@ -61,15 +65,13 @@
                 <constraint firstAttribute="trailing" secondItem="3rc-0L-7kY" secondAttribute="trailing" id="DXS-gs-4hg"/>
                 <constraint firstAttribute="trailing" secondItem="Mpw-jm-64b" secondAttribute="trailing" constant="8" id="Hwo-PK-53O"/>
                 <constraint firstAttribute="bottom" secondItem="3rc-0L-7kY" secondAttribute="bottom" id="PnJ-Or-aUj"/>
-                <constraint firstItem="Mpw-jm-64b" firstAttribute="leading" secondItem="YQL-Aw-5kn" secondAttribute="trailing" constant="-6.5" id="Rcs-Uv-bOt"/>
+                <constraint firstItem="Mpw-jm-64b" firstAttribute="leading" secondItem="YQL-Aw-5kn" secondAttribute="trailing" id="Rcs-Uv-bOt"/>
                 <constraint firstItem="3rc-0L-7kY" firstAttribute="top" secondItem="ca6-ly-8uX" secondAttribute="bottom" constant="12" id="TrB-mV-GZJ"/>
                 <constraint firstItem="ca6-ly-8uX" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="8" id="VRb-Rs-EBx"/>
-                <constraint firstItem="Mpw-jm-64b" firstAttribute="leading" secondItem="YQL-Aw-5kn" secondAttribute="trailing" constant="-6.5" id="fey-r1-Yee"/>
                 <constraint firstAttribute="trailing" secondItem="Mpw-jm-64b" secondAttribute="trailing" constant="8" id="k2t-Qs-lN9"/>
                 <constraint firstItem="ca6-ly-8uX" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="3.5" id="kJV-Wv-9oZ"/>
                 <constraint firstItem="ca6-ly-8uX" firstAttribute="leading" secondItem="3rc-0L-7kY" secondAttribute="leading" id="sAu-fH-SyP"/>
                 <constraint firstItem="YQL-Aw-5kn" firstAttribute="centerY" secondItem="ca6-ly-8uX" secondAttribute="centerY" id="sxH-2A-zUx"/>
-                <constraint firstItem="Mpw-jm-64b" firstAttribute="centerY" secondItem="YQL-Aw-5kn" secondAttribute="centerY" constant="-1" id="uM4-xi-FVw"/>
             </constraints>
             <size key="customSize" width="479" height="260"/>
             <connections>
@@ -82,7 +84,7 @@
     </objects>
     <resources>
         <namedColor name="redColor">
-            <color red="0.98431372549019602" green="0.0" blue="0.17254901960784313" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.98400002717971802" green="0.0" blue="0.17299999296665192" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
     </resources>
 </document>

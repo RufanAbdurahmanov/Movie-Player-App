@@ -14,6 +14,7 @@ protocol CellProtocol {
     var vote: Double? { get }
     var date : String? { get }
 }
+
 extension CellProtocol {
     var cellId: Int? { return 0 }
     var url: String? { return "" }
@@ -21,7 +22,6 @@ extension CellProtocol {
     var vote: Double? { return 0.0 }
     var date : String? { return "" }
 }
-
 
 class CollectionViewCell: UICollectionViewCell {
     

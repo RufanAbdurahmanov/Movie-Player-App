@@ -30,7 +30,7 @@
                         </userDefinedRuntimeAttributes>
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="45K-Xe-1DC">
-                        <rect key="frame" x="156" y="8" width="395" height="18"/>
+                        <rect key="frame" x="156" y="8" width="395" height="21.5"/>
                         <fontDescription key="fontDescription" type="system" weight="medium" pointSize="18"/>
                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <nil key="highlightedColor"/>
@@ -66,12 +66,11 @@
                 <constraint firstAttribute="trailing" secondItem="45K-Xe-1DC" secondAttribute="trailing" constant="8" id="Hzw-Li-LON"/>
                 <constraint firstItem="xb1-Xs-Nfi" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="4" id="Nlz-GT-fj8"/>
                 <constraint firstItem="45K-Xe-1DC" firstAttribute="leading" secondItem="xb1-Xs-Nfi" secondAttribute="trailing" constant="8" id="eP5-2z-2C2"/>
-                <constraint firstItem="Z7C-8D-atR" firstAttribute="leading" secondItem="xb1-Xs-Nfi" secondAttribute="trailing" constant="8" id="oON-gd-hF6"/>
+                <constraint firstItem="Z7C-8D-atR" firstAttribute="leading" secondItem="Lbi-5c-t3e" secondAttribute="leading" id="giT-5G-fCV"/>
                 <constraint firstItem="Lbi-5c-t3e" firstAttribute="centerY" secondItem="xb1-Xs-Nfi" secondAttribute="centerY" id="rJP-KL-QOl"/>
                 <constraint firstAttribute="bottom" secondItem="xb1-Xs-Nfi" secondAttribute="bottom" constant="4" id="sqO-cF-oZZ"/>
                 <constraint firstItem="Lbi-5c-t3e" firstAttribute="leading" secondItem="45K-Xe-1DC" secondAttribute="leading" id="tQm-FS-fae"/>
                 <constraint firstItem="f5c-zs-sIl" firstAttribute="leading" secondItem="Z7C-8D-atR" secondAttribute="trailing" constant="3" id="uHY-fg-1kg"/>
-                <constraint firstItem="Lbi-5c-t3e" firstAttribute="top" secondItem="45K-Xe-1DC" secondAttribute="bottom" constant="19" id="zC5-nO-0Nl"/>
             </constraints>
             <size key="customSize" width="559" height="110"/>
             <connections>
