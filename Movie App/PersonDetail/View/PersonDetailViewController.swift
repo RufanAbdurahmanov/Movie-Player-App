@@ -56,7 +56,7 @@ extension PersonViewController: UITableViewDelegate, UITableViewDataSource {
             let detailsID = "\(MovieDetailsViewController.self)"
             let detailsVC = self?.storyboard?.instantiateViewController(withIdentifier: detailsID) as! MovieDetailsViewController
             
-            detailsVC.viewModel = MovieDetailsViewModel(id: self?.viewModel.personMovies[indexPath.item].cellId ?? 0, name: self?.viewModel.personMovies[indexPath.item].cellTitle ?? "")
+            detailsVC.viewModel = MovieDetailsViewModel(id: self?.viewModel.personMovies[indexPath.item].cellId ?? 0, name: self?.viewModel.personMovies[indexPath.item].cellTitle ?? "", url: viewModel.movies[indexPath.item].)
             self?.navigationController?.show(detailsVC, sender: nil)
         }
         return cell

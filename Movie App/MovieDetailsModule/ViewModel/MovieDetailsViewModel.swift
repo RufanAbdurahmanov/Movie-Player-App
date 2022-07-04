@@ -14,15 +14,17 @@ class MovieDetailsViewModel {
     var movieCasts = [MovieCast]()
     var similarMovies = [SimiliarMoviesResult]()
     var movieName: String!
+    var movieImageUrl: URL!
     fileprivate let mainQueue = OperationQueue.main
     
     var id: Int!
     
     init() {}
     
-    init(id: Int, name: String) {
+    init(id: Int, name: String, url: String) {
         self.id = id
         self.movieName = name
+        self.movieImageUrl = URL(string: url)
     }
     
     func getMovieDetails(complete: @escaping()->()) {
@@ -47,7 +49,7 @@ class MovieDetailsViewModel {
     }
     
     func downloadTrailer(item: VideoResult, cancelDownload: Bool, complete: @escaping(String?, Double?)->()) {
-        
+        let imgData = try NSData(contentsOf: movieImageUrl)
         if cancelDownload == true {
             mainQueue.cancelAllOperations()
             complete(nil, 0)
@@ -58,7 +60,7 @@ class MovieDetailsViewModel {
                     WebService.shared.downloadVideo(urlString: "https://youtu.be/zAGVQLHvwOY") { [unowned self] progress, url in
                         
                         if progress == 1, let url = url, cancelDownload == false {
-                            CoreDataHelper.shared.insertDownloadTrailersData(movieName: movieName, trailerName:  item.name ?? "trailer x", trailerPath: "\(url)")
+                            CoreDataHelper.shared.insertDownloadTrailersData(movieName: movieName, trailerName:  item.name ?? "trailer x", trailerPath: "\(url)", movieImage: imgData as! Data)
                             complete(nil, progress)
                         } else if progress < 1, cancelDownload == false {
                             complete(nil, progress)
