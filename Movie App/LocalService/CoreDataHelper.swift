@@ -15,9 +15,8 @@ class CoreDataHelper {
     let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     
     
-    func insertDownloadTrailersData(movieName: String, trailerName: String, trailerPath: String, movieImage: Data) {
+    func insertDownloadTrailersData(movieName: String, trailerName: String, trailerPath: String) {
         let downloadedTrailerModel = DownloadedTrailers(context: context)
-        downloadedTrailerModel.movieImage = movieImage
         downloadedTrailerModel.movieName = movieName
         downloadedTrailerModel.trailerName = trailerName
         downloadedTrailerModel.trailerPath = trailerPath

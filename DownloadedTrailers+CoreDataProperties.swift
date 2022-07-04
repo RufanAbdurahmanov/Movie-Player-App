@@ -19,6 +19,5 @@ extension DownloadedTrailers {
     @NSManaged public var movieName: String?
     @NSManaged public var trailerName: String?
     @NSManaged public var trailerPath: String?
-    @NSManaged public var movieImage: Data?
 
 }

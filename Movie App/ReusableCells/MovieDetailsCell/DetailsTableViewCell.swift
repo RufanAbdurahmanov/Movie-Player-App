@@ -10,15 +10,13 @@ import UIKit
 class DetailsTableViewCell: UITableViewCell {
     
     @IBOutlet weak private var videoPlayer: UIView!
-    @IBOutlet weak private var imageeView: UIImageView!
     @IBOutlet weak private var starImageView: UIImageView!
     @IBOutlet weak private var clockImageView: UIImageView!
     
     @IBOutlet weak private var nameLabel: UILabel!
     @IBOutlet weak private var taglineLabel: UILabel!
-    @IBOutlet weak private var companiesLabel: UILabel!
-    @IBOutlet weak private var budgetLabel: UILabel!
-    @IBOutlet weak private var revenueLabel: UILabel!
+    @IBOutlet weak var languagesLabel: UILabel!
+    
     @IBOutlet weak private var voteLabel: UILabel!
     @IBOutlet weak private var runtimeLabel: UILabel!
     @IBOutlet weak private var categoriesLabel: UILabel!
@@ -71,28 +69,45 @@ class DetailsTableViewCell: UITableViewCell {
         castCollectionView.reloadData()
         similiarMoviesCollectionView.reloadData()
         
-        var companyName = ""
+        var languages = ""
         var categories = ""
         
-        imageeView.loadImage(imageURL: details.backdropPath ?? "")
         nameLabel.text = details.originalTitle ?? ""
         taglineLabel.text = details.tagline ?? ""
         
         
         
-        for company in details.productionCompanies ?? [] {
-            companyName += "\(String(describing: company.name ?? ""))\n"
-        }
-        
-        companiesLabel.text = companyName
-        budgetLabel.text = "$\(String(describing: (details.budget ?? 0).withCommas()))"
-        revenueLabel.text = "$\(String(describing: (details.revenue ?? 0).withCommas()))"
         voteLabel.text = String(details.voteAverage ?? 0.0)
-        runtimeLabel.text = String("\((details.runtime ?? 0)/60)h \((details.runtime ?? 0)%60)m")
+        //runtimeLabel.text = String("\((details.runtime ?? 0)/60)h \((details.runtime ?? 0)%60)m")
+        runtimeLabel.text = "\(details.runtime ?? 10) minutes"
         
-        for category in details.genres ?? [] {
-            categories += "  \(String(describing: category.name ?? ""))"
+        if details.genres != nil {
+            if details.genres!.count <= 2 {
+                for category in details.genres ?? [] {
+                    categories += "\(String(describing: category.name ?? "")) "
+                }
+            } else {
+                for i in 1...2 {
+                    categories += "\(String(describing: details.genres![i].name ?? "")) "
+                }
+
+            }
         }
+        
+        if details.spokenLanguages != nil {
+            if details.spokenLanguages!.count <= 2 {
+                for language in details.spokenLanguages ?? [] {
+                    languages += "\(String(describing: language.englishName ?? "")) "
+                }
+            } else {
+                for i in 1...2 {
+                    languages += "\(String(describing: details.spokenLanguages![i].englishName ?? "")) "
+                }
+
+            }
+        }
+        languagesLabel.text = languages
+        
         categoriesLabel.text = categories
         overviewLabel.text = details.overview ?? ""
         releaseDateLabel.text = details.releaseDate ?? ""

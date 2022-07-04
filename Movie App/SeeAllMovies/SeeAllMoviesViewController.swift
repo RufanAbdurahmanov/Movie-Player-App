@@ -40,7 +40,7 @@ extension SeeAllMoviesViewController: UICollectionViewDelegate, UICollectionView
         let detailsID = "\(MovieDetailsViewController.self)"
         let detailsVC = self.storyboard?.instantiateViewController(withIdentifier: detailsID) as! MovieDetailsViewController
     
-        detailsVC.viewModel = MovieDetailsViewModel(id: viewModel.movies[indexPath.item].cellId ?? 0, name: viewModel.movies[indexPath.item].cellTitle ?? "", url: viewModel.movies[indexPath.item].url ?? "")
+        detailsVC.viewModel = MovieDetailsViewModel(id: viewModel.movies[indexPath.item].cellId ?? 0, name: viewModel.movies[indexPath.item].cellTitle ?? "")
         self.navigationController?.show(detailsVC, sender: nil)
     }
     

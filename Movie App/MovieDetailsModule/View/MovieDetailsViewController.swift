@@ -152,7 +152,7 @@ extension MovieDetailsViewController: UITableViewDelegate, UITableViewDataSource
             let detailsID = "\(MovieDetailsViewController.self)"
             let detailsVC = self.storyboard?.instantiateViewController(withIdentifier: detailsID) as! MovieDetailsViewController
             
-            detailsVC.viewModel = MovieDetailsViewModel(id: movie.cellId!, name: movie.cellTitle!, url: movie.backdropPath ?? "")
+            detailsVC.viewModel = MovieDetailsViewModel(id: movie.cellId!, name: movie.cellTitle!)
             self.navigationController?.show(detailsVC, sender: nil)
         }
         

@@ -95,8 +95,7 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
             let detailsID = "\(MovieDetailsViewController.self)"
             let detailsVC = self.storyboard?.instantiateViewController(withIdentifier: detailsID) as! MovieDetailsViewController
             if self.segmentedControl.selectedSegmentIndex == 0 {
-                detailsVC.viewModel = MovieDetailsViewModel(id: self.movieViewModel.movies[indexPath.item].cellItems[indexPath.item].id!, name: self.movieViewModel.movies[indexPath.item].cellItems[indexPath.item].title!,
-                                                            url: self.movieViewModel.movies[indexPath.item].cellItems[indexPath.item].cellUrl!)
+                detailsVC.viewModel = MovieDetailsViewModel(id: self.movieViewModel.movies[indexPath.item].cellItems[index].cellId ?? 0, name: self.movieViewModel.movies[indexPath.item].cellItems[index].title!)
                 self.navigationController?.show(detailsVC, sender: nil)
             }
             
