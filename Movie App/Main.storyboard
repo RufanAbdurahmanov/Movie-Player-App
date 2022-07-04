@@ -30,7 +30,7 @@
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="iTo-DD-xFT">
                                 <rect key="frame" x="0.0" y="127" width="414" height="686"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="cqc-8q-aeP">
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="16" minimumInteritemSpacing="10" id="cqc-8q-aeP">
                                     <size key="itemSize" width="128" height="128"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
@@ -84,7 +84,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1471" y="1207"/>
+            <point key="canvasLocation" x="-1513" y="1207"/>
         </scene>
         <!--Coming Soon View Controller-->
         <scene sceneID="U1J-vv-DnM">
@@ -245,7 +245,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2b1-rc-nrw" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1471" y="1925"/>
+            <point key="canvasLocation" x="-1513" y="1925"/>
         </scene>
         <!--Search View Controller-->
         <scene sceneID="Gm7-Jw-BVF">
@@ -330,7 +330,7 @@
                             </label>
                             <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="UZh-TC-6bo">
                                 <rect key="frame" x="20" y="117" width="374" height="4"/>
-                                <color key="progressTintColor" name="lightBlue"/>
+                                <color key="progressTintColor" systemColor="tintColor"/>
                             </progressView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TA9-Ew-ywa">
                                 <rect key="frame" x="0.0" y="149" width="414" height="2"/>
@@ -415,7 +415,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VJ3-X7-vqv" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1471" y="2639"/>
+            <point key="canvasLocation" x="-1513" y="2635"/>
         </scene>
         <!--Person View Controller-->
         <scene sceneID="Iy9-Fj-Hll">
@@ -449,48 +449,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4yZ-WP-FdN" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1471" y="3385"/>
-        </scene>
-        <!--See All Movies View Controller-->
-        <scene sceneID="iF0-nh-VD0">
-            <objects>
-                <viewController storyboardIdentifier="SeeAllMoviesViewController" id="R07-nc-pUW" customClass="SeeAllMoviesViewController" customModule="Movie_App" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="rNI-uS-tDZ">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Itg-xh-aIX">
-                                <rect key="frame" x="16" y="44" width="382" height="818"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="AAL-rN-e3t">
-                                    <size key="itemSize" width="128" height="128"/>
-                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
-                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                </collectionViewFlowLayout>
-                                <cells/>
-                                <connections>
-                                    <outlet property="dataSource" destination="R07-nc-pUW" id="lEw-zk-AQo"/>
-                                    <outlet property="delegate" destination="R07-nc-pUW" id="LPW-1C-J5z"/>
-                                </connections>
-                            </collectionView>
-                        </subviews>
-                        <viewLayoutGuide key="safeArea" id="c45-ZJ-dKo"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                        <constraints>
-                            <constraint firstItem="Itg-xh-aIX" firstAttribute="bottom" secondItem="c45-ZJ-dKo" secondAttribute="bottom" id="6Sq-bR-oxx"/>
-                            <constraint firstItem="Itg-xh-aIX" firstAttribute="leading" secondItem="c45-ZJ-dKo" secondAttribute="leading" constant="16" id="Bhg-Ae-0jg"/>
-                            <constraint firstItem="Itg-xh-aIX" firstAttribute="top" secondItem="c45-ZJ-dKo" secondAttribute="top" id="Mbc-CL-rg7"/>
-                            <constraint firstItem="c45-ZJ-dKo" firstAttribute="trailing" secondItem="Itg-xh-aIX" secondAttribute="trailing" constant="16" id="Zau-BK-0Ut"/>
-                        </constraints>
-                    </view>
-                    <connections>
-                        <outlet property="collectionView" destination="Itg-xh-aIX" id="YIO-T0-NDk"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Byr-sr-Wug" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1744.9275362318842" y="3233.7053571428569"/>
+            <point key="canvasLocation" x="-1513" y="3376"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="7wE-hs-mJw">
@@ -536,7 +495,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gCE-7p-4d7" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1471" y="479"/>
+            <point key="canvasLocation" x="-1512" y="479"/>
         </scene>
         <!--Coming soon-->
         <scene sceneID="ckV-LA-MvS">
@@ -753,6 +712,9 @@
         </systemColor>
         <systemColor name="systemGray5Color">
             <color red="0.89803921568627454" green="0.89803921568627454" blue="0.91764705882352937" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="tintColor">
+            <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

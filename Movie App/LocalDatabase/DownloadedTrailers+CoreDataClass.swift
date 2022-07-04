@@ -2,7 +2,7 @@
 //  DownloadedTrailers+CoreDataClass.swift
 //  
 //
-//  Created by Rufan Abdurahmanov on 02.07.22.
+//  Created by Rufan Abdurahmanov on 04.07.22.
 //
 //
 

@@ -84,11 +84,11 @@ class DetailsTableViewCell: UITableViewCell {
         if details.genres != nil {
             if details.genres!.count <= 2 {
                 for category in details.genres ?? [] {
-                    categories += "\(String(describing: category.name ?? "")) "
+                    categories += "\(String(describing: category.name ?? "")), "
                 }
             } else {
                 for i in 1...2 {
-                    categories += "\(String(describing: details.genres![i].name ?? "")) "
+                    categories += "\(String(describing: details.genres![i].name ?? "")), "
                 }
 
             }
@@ -97,18 +97,18 @@ class DetailsTableViewCell: UITableViewCell {
         if details.spokenLanguages != nil {
             if details.spokenLanguages!.count <= 2 {
                 for language in details.spokenLanguages ?? [] {
-                    languages += "\(String(describing: language.englishName ?? "")) "
+                    languages += "\(String(describing: language.englishName ?? "")), "
                 }
             } else {
                 for i in 1...2 {
-                    languages += "\(String(describing: details.spokenLanguages![i].englishName ?? "")) "
+                    languages += "\(String(describing: details.spokenLanguages![i].englishName ?? "")), "
                 }
 
             }
         }
-        languagesLabel.text = languages
+        languagesLabel.text = String(languages.dropLast(2))
         
-        categoriesLabel.text = categories
+        categoriesLabel.text = String(categories.dropLast(2))
         overviewLabel.text = details.overview ?? ""
         releaseDateLabel.text = details.releaseDate ?? ""
     }
