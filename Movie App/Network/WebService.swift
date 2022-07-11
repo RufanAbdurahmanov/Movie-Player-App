@@ -33,6 +33,11 @@ protocol WebServiceProtocol {
     func getUpcomingMovies(page: Int, complete: @escaping([UpcomingMovieResult])->())
     
     func rateMovie(point: Float, movieID: Int, complete: @escaping((RatePostModel)->()))
+    
+    func getTvShowVideos(id: Int, complete: @escaping(([TvTrailerResult])->()))
+    func getTvShowDetails(id: Int, complete: @escaping((TvDetails)->()))
+    func getTvShowSeason(id: Int, seasonNumber: Int, complete: @escaping((TvSeasons)->()))
+    func getTvShowCasts(id: Int, complete: @escaping(([TvCast])->()))
 }
 
 class WebService: WebServiceProtocol {
@@ -207,4 +212,36 @@ class WebService: WebServiceProtocol {
         }
     }
     
+    
+    func getTvShowVideos(id: Int, complete: @escaping(([TvTrailerResult])->())) {
+        let url = "\(baseURL.url.rawValue)/\(MediaType.tv.type)/\(id)/videos?api_key=\(apiKey.key.rawValue)&language=en-US"
+        
+        NetworkRequest.shared.requestAPI(type: TvTrailers.self, url: url) { trailers in
+            complete(trailers.results ?? [])
+        }
+    }
+    
+    
+    func getTvShowDetails(id: Int, complete: @escaping((TvDetails)->())) {
+        let url = "\(baseURL.url.rawValue)/\(MediaType.tv.type)/\(id)?api_key=\(apiKey.key.rawValue)&language=en-US"
+        NetworkRequest.shared.requestAPI(type: TvDetails.self, url: url) { details in
+            complete(details)
+        }
+    }
+    
+    
+    func getTvShowSeason(id: Int, seasonNumber: Int, complete: @escaping((TvSeasons)->())) {
+        let url = "\(baseURL.url.rawValue)/\(MediaType.tv.type)/\(id)/season/\(seasonNumber)?api_key=\(apiKey.key.rawValue)&language=en-US"
+        
+        NetworkRequest.shared.requestAPI(type: TvSeasons.self, url: url) { seasons in
+            complete(seasons)
+        }
+    }
+    func getTvShowCasts(id: Int, complete: @escaping(([TvCast])->())) {
+        let url = "\(baseURL.url.rawValue)/\(MediaType.tv.type)/\(id)/credits?api_key=\(apiKey.key.rawValue)&language=en-US"
+        
+        NetworkRequest.shared.requestAPI(type: TvCasts.self, url: url) { casts in
+            complete(casts.cast ?? [])
+        }
+    }
 }

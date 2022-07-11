@@ -53,22 +53,20 @@ class MovieDetailsViewModel {
             complete(nil, 0)
         } else {
             mainQueue.addOperation {
-//                DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+                
+                WebService.shared.downloadVideo(urlString: "https://youtu.be/zAGVQLHvwOY") { [unowned self] progress, url in
                     
-                    WebService.shared.downloadVideo(urlString: "https://youtu.be/zAGVQLHvwOY") { [unowned self] progress, url in
-                        
-                        if progress == 1, let url = url, cancelDownload == false {
-                            CoreDataHelper.shared.insertDownloadTrailersData(movieName: movieName, trailerName:  item.name ?? "trailer x", trailerPath: "\(url)")
-                            complete(nil, progress)
-                        } else if progress < 1, cancelDownload == false {
-                            complete(nil, progress)
-                        } else if progress == 0 {
-                            complete(nil, progress)
-                        } else {
-                            complete("Error", 0)
-                        }
+                    if progress == 1, let url = url, cancelDownload == false {
+                        CoreDataHelper.shared.insertDownloadTrailersData(movieName: movieName, trailerName:  item.name ?? "trailer x", trailerPath: "\(url)")
+                        complete(nil, progress)
+                    } else if progress < 1, cancelDownload == false {
+                        complete(nil, progress)
+                    } else if progress == 0 {
+                        complete(nil, progress)
+                    } else {
+                        complete("Error", 0)
                     }
-//                }
+                }
             }
         }
     }

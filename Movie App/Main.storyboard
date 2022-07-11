@@ -84,7 +84,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1513" y="1207"/>
+            <point key="canvasLocation" x="-2259" y="1203"/>
         </scene>
         <!--Coming Soon View Controller-->
         <scene sceneID="U1J-vv-DnM">
@@ -245,7 +245,37 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2b1-rc-nrw" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1513" y="1925"/>
+            <point key="canvasLocation" x="-2688" y="1925"/>
+        </scene>
+        <!--Tv Show Details View Controller-->
+        <scene sceneID="fu8-e0-e3M">
+            <objects>
+                <viewController storyboardIdentifier="TvShowDetailsViewController" id="9UW-g6-Bil" customClass="TvShowDetailsViewController" customModule="Movie_App" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Ix5-YP-H5G">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="5OU-gg-peQ">
+                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </tableView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="ymt-44-nYW"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="5OU-gg-peQ" firstAttribute="top" secondItem="ymt-44-nYW" secondAttribute="top" id="D22-vE-hRq"/>
+                            <constraint firstItem="ymt-44-nYW" firstAttribute="trailing" secondItem="5OU-gg-peQ" secondAttribute="trailing" id="LZk-od-UCU"/>
+                            <constraint firstItem="5OU-gg-peQ" firstAttribute="leading" secondItem="ymt-44-nYW" secondAttribute="leading" id="QuA-pT-xi3"/>
+                            <constraint firstItem="ymt-44-nYW" firstAttribute="bottom" secondItem="5OU-gg-peQ" secondAttribute="bottom" id="oAj-ER-tYY"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="tableView" destination="5OU-gg-peQ" id="TEV-zG-7ic"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="6Za-av-8vN" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1862" y="1925"/>
         </scene>
         <!--Search View Controller-->
         <scene sceneID="Gm7-Jw-BVF">
@@ -415,7 +445,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VJ3-X7-vqv" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1513" y="2635"/>
+            <point key="canvasLocation" x="-2688" y="2634"/>
         </scene>
         <!--Person View Controller-->
         <scene sceneID="Iy9-Fj-Hll">
@@ -449,7 +479,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4yZ-WP-FdN" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1513" y="3376"/>
+            <point key="canvasLocation" x="-2688" y="3376"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="7wE-hs-mJw">
@@ -495,7 +525,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gCE-7p-4d7" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1512" y="479"/>
+            <point key="canvasLocation" x="-2259" y="475"/>
         </scene>
         <!--Coming soon-->
         <scene sceneID="ckV-LA-MvS">
@@ -582,6 +612,47 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dzo-Pk-FLL" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="861" y="479"/>
+        </scene>
+        <!--See All Movies View Controller-->
+        <scene sceneID="42W-zK-ZKz">
+            <objects>
+                <viewController storyboardIdentifier="SeeAllMoviesViewController" id="FcL-g6-iYb" customClass="SeeAllMoviesViewController" customModule="Movie_App" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="CMw-K5-BZx">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="jdl-p0-7n0">
+                                <rect key="frame" x="16" y="44" width="382" height="818"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="8Bu-ng-HaI">
+                                    <size key="itemSize" width="128" height="128"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells/>
+                                <connections>
+                                    <outlet property="dataSource" destination="FcL-g6-iYb" id="4hk-gH-ONh"/>
+                                    <outlet property="delegate" destination="FcL-g6-iYb" id="4hv-FX-bwZ"/>
+                                </connections>
+                            </collectionView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="nlD-PS-Cm6"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="jdl-p0-7n0" firstAttribute="top" secondItem="nlD-PS-Cm6" secondAttribute="top" id="fQQ-6Y-fDz"/>
+                            <constraint firstItem="nlD-PS-Cm6" firstAttribute="trailing" secondItem="jdl-p0-7n0" secondAttribute="trailing" constant="16" id="o7P-5o-v4O"/>
+                            <constraint firstItem="jdl-p0-7n0" firstAttribute="bottom" secondItem="nlD-PS-Cm6" secondAttribute="bottom" id="oSS-k0-e8A"/>
+                            <constraint firstItem="jdl-p0-7n0" firstAttribute="leading" secondItem="nlD-PS-Cm6" secondAttribute="leading" constant="16" id="v5h-Lw-IxG"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="collectionView" destination="jdl-p0-7n0" id="GDo-m8-oYv"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="IlY-y7-xQQ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2943.4782608695655" y="233.70535714285714"/>
         </scene>
         <!--Genres View Controller-->
         <scene sceneID="l1j-11-NBr">
