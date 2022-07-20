@@ -1,4 +1,4 @@
-# Movie-Player-App
+# Movie Player App
 
 In this project I used [TMDB](https://developers.themoviedb.org/3/getting-started/introduction) APIs. <br>In this app you can see Trending, Popular, Top-Rated, Upcoming etc. movies and tv shows, Movie Trailers, Movie details, Cast&Crew, Actors information, Filmography .etc
 
