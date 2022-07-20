@@ -20,14 +20,18 @@ class PersonViewModel {
     }
     
     func getPerson(complete: @escaping()->()) {
-        WebService.shared.getPerson(id: personID) { [unowned self] person in
-            self.person = person
+        WebService.shared.getPerson(id: personID) { [unowned self] person, error in
+            if error == nil, person != nil {
+                self.person = person
+            }
             complete()
         }
     }
     func getPersonFilmography(complete: @escaping()->()) { 
-        WebService.shared.getPersonFilmography(id: personID) { [unowned self] casts in
-            self.personMovies = casts
+        WebService.shared.getPersonFilmography(id: personID) { [unowned self] casts, error in
+            if error == nil, casts != nil {
+                self.personMovies = casts!
+            }
             complete()
         }
     }

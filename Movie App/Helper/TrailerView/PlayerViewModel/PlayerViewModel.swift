@@ -14,8 +14,10 @@ class PlayerViewModel {
     init() {}
     
     func getMovieVideos(id: String, complete: @escaping()->()) {
-        WebService.shared.getMovieVideos(id: id) { [unowned self] videos in
-            self.videos = videos
+        WebService.shared.getMovieVideos(id: id) { [unowned self] videos, error in
+            if error == nil, videos != nil {
+                self.videos = videos!
+            }
             complete()
         }
     }

@@ -17,8 +17,8 @@ class DownloadsCollectionViewCell: UICollectionViewCell {
         // Initialization code
         backgroundColor = .lightBlueColor.withAlphaComponent(0.3)
         layer.cornerRadius = 6
-        layer.borderWidth = 0.07
-        layer.borderColor = UIColor.white.cgColor
+        layer.borderWidth = 0.2
+        layer.borderColor = UIColor.gray.cgColor
     }
     
     func configure(item: DownloadedTrailerModel) {

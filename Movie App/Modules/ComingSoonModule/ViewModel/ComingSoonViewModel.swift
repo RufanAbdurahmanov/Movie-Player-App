@@ -14,8 +14,10 @@ class ComingSoonViewModel {
     
     
     func getComingSoonMovies(complete: @escaping()->()) {
-        WebService.shared.getUpcomingMovies(page: 1) { [unowned self] upcomingMovies in
-            self.upcomingMovies = upcomingMovies
+        WebService.shared.getUpcomingMovies(page: 1) { [unowned self] upcomingMovies, error in
+            if error == nil, upcomingMovies != nil {
+                self.upcomingMovies = upcomingMovies!
+            }
             complete()
         }
     }

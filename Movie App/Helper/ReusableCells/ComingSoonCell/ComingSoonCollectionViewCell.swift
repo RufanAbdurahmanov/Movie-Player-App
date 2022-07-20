@@ -18,11 +18,10 @@ class ComingSoonCollectionViewCell: UICollectionViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
-        //backgroundColor = UIColor(red: 40/255, green: 51/255, blue: 64/255, alpha: 1)
         backgroundColor = .lightBlueColor.withAlphaComponent(0.3)
         layer.cornerRadius = 6
-        layer.borderWidth = 0.07
-        layer.borderColor = UIColor.white.cgColor
+        layer.borderWidth = 0.2
+        layer.borderColor = UIColor.gray.cgColor
     }
     
     func configure(item: CellProtocol) {

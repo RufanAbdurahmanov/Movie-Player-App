@@ -363,7 +363,6 @@
 		5C418AED28703D91008BC547 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				5C418AF328704062008BC547 /* Genres Cell */,
 				5C418AEA2870393D008BC547 /* GenresViewController.swift */,
 			);
 			path = View;
@@ -566,6 +565,7 @@
 		5C78D6CA28476F54002D0CFB /* ReusableCells */ = {
 			isa = PBXGroup;
 			children = (
+				5C418AF328704062008BC547 /* Genres Cell */,
 				5C5467642861F0280068BB9A /* DownloadsCell */,
 				5CA1796A2858571E001C6792 /* PersonCell */,
 				5C7C81B92857100300A4D772 /* MovieCastCell */,

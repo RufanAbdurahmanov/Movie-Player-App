@@ -49,7 +49,7 @@ extension ComingSoonViewController: UICollectionViewDelegate, UICollectionViewDa
 //    }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: collectionView.frame.width, height: 110 )
+        return CGSize(width: collectionView.frame.width * 0.96, height: 110 )
     }
     
 }

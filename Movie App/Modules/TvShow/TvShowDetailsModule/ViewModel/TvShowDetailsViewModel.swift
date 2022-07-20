@@ -24,29 +24,37 @@ class TvShowDetailsViewModel {
     
     
     func getTvShowTrailers(complete: @escaping()->()) {
-        WebService.shared.getTvShowVideos(id: tvID) { videos in
-            self.videos = videos
+        WebService.shared.getTvShowVideos(id: tvID) { videos, error  in
+            if error == nil, videos != nil {
+                self.videos = videos!
+            }
             complete()
         }
     }
     
     
     func getTvShowDetails(complete: @escaping()->()) {
-        WebService.shared.getTvShowDetails(id: tvID) { details in
-            self.details = details
+        WebService.shared.getTvShowDetails(id: tvID) { details, error in
+            if error == nil, details != nil {
+                self.details = details!
+            }
             complete()
         }
     }
     
     func getTvShowSeasons(complete: @escaping()->()) {
-        WebService.shared.getTvShowSeason(id: tvID, seasonNumber: seasonNumber) { seasons in
-            self.seasons = seasons
+        WebService.shared.getTvShowSeason(id: tvID, seasonNumber: seasonNumber) { seasons, error in
+            if error == nil, seasons != nil {
+                self.seasons = seasons!
+            }
             complete()
         }
     }
     func getTvShowCasts(complete: @escaping()->()) {
-        WebService.shared.getTvShowCasts(id: tvID) { casts in
-            self.tvCasts = casts
+        WebService.shared.getTvShowCasts(id: tvID) { casts, error in
+            if error == nil, casts != nil {
+                self.tvCasts = casts!
+            }
             complete()
         }
     }

@@ -31,14 +31,11 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="253" verticalCompressionResistancePriority="749" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hdQ-hb-dPj">
-                        <rect key="frame" x="8" y="306" width="369" height="122.5"/>
+                        <rect key="frame" x="8" y="306.5" width="369" height="122"/>
                         <string key="text">"Charles Elmer Taylor Jr.", "Charles Elmer 'Rip' Taylor Jr.", The Crying Comedian",
-        "Prince of Pandemonium",
-        "Master of Mayhem",
-        "King of Camp and Confetti",
-        "Charles E. Taylor"</string>
+        "Prince of </string>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                        <nil key="textColor"/>
+                        <color key="textColor" systemColor="systemGrayColor"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="star.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="Xin-OY-EuR">
@@ -61,14 +58,14 @@
                             <constraint firstAttribute="width" constant="251" id="GFF-BI-tdb"/>
                         </constraints>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                        <nil key="textColor"/>
+                        <color key="textColor" systemColor="systemGrayColor"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalCompressionResistancePriority="749" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ztg-gf-pG0">
                         <rect key="frame" x="8" y="533.5" width="369" height="364"/>
                         <string key="text">From Wikipedia, the free encyclopedia\n\nCharles Elmer \"Rip\" Taylor Jr. (January 13, 1931 – October 6, 2019) was an American actor and comedian, known for his exuberance and flamboyant personality, including his wild moustache, toupee, and his habit of showering himself (and others) with confetti.\n\nThroughout the 1970s, Taylor was a frequent celebrity guest panelist on TV game shows such as Hollywood Squares, To Tell the Truth, and The Gong Show, and substituted for Charles Nelson Reilly on The Match Game. He became a regular on Sid and Marty Krofft's Sigmund and the Sea Monsters, playing Sheldon, a sea-genie who lived in a conch shell. In addition, Taylor was also a regular on The Brady Bunch Hour, playing a role of neighbor/performer Jack Merrill. He also hosted a short-lived send-up of beauty pageants titled The $1.98 Beauty Show, created by Gong Show producer/host Chuck Barris, in 1978.</string>
                         <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                        <nil key="textColor"/>
+                        <color key="textColor" systemColor="systemGrayColor"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="0000-00-00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uAc-8I-17s">
@@ -77,7 +74,7 @@
                             <constraint firstAttribute="height" constant="17" id="6eP-6S-o7R"/>
                         </constraints>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                        <nil key="textColor"/>
+                        <color key="textColor" systemColor="systemGrayColor"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Birth date:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sUl-Ae-kgQ">
@@ -89,7 +86,7 @@
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="252" misplaced="YES" text="0000-00-00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1FU-or-K14">
                         <rect key="frame" x="103" y="941" width="97.5" height="15.5"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                        <nil key="textColor"/>
+                        <color key="textColor" systemColor="systemGrayColor"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Death date: " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="48m-tQ-pQ7">
@@ -184,6 +181,7 @@
                     <constraint firstItem="ztg-gf-pG0" firstAttribute="top" secondItem="llI-gs-ckS" secondAttribute="bottom" constant="8" id="DAY-1r-vtD"/>
                     <constraint firstItem="S6m-LD-o9F" firstAttribute="leading" secondItem="bwH-rS-1is" secondAttribute="leading" id="DhF-4s-2Sx"/>
                     <constraint firstItem="sUl-Ae-kgQ" firstAttribute="top" secondItem="ztg-gf-pG0" secondAttribute="bottom" constant="12" id="DlL-6h-GqE"/>
+                    <constraint firstItem="ztg-gf-pG0" firstAttribute="leading" secondItem="llI-gs-ckS" secondAttribute="trailing" constant="-369" id="Ely-XN-kla"/>
                     <constraint firstItem="1FU-or-K14" firstAttribute="leading" secondItem="48m-tQ-pQ7" secondAttribute="trailing" id="Exp-Jc-cIf"/>
                     <constraint firstItem="bwH-rS-1is" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="8" id="FHj-Ry-fso"/>
                     <constraint firstItem="rLi-MV-n7h" firstAttribute="leading" secondItem="hdQ-hb-dPj" secondAttribute="leading" id="FdV-ZK-gcS"/>
@@ -202,6 +200,7 @@
                     <constraint firstItem="uAc-8I-17s" firstAttribute="leading" secondItem="sUl-Ae-kgQ" secondAttribute="trailing" constant="4" id="ZHF-8d-QzG"/>
                     <constraint firstAttribute="trailing" secondItem="llI-gs-ckS" secondAttribute="trailing" constant="8" id="ZaH-uq-OUM"/>
                     <constraint firstItem="Xin-OY-EuR" firstAttribute="top" secondItem="i6n-RC-hCF" secondAttribute="bottom" constant="8" id="bQ4-8b-1sy"/>
+                    <constraint firstItem="hdQ-hb-dPj" firstAttribute="leading" secondItem="eyD-5T-Rx4" secondAttribute="trailing" constant="-87.5" id="cKg-SY-gdQ"/>
                     <constraint firstItem="eyD-5T-Rx4" firstAttribute="top" secondItem="i6n-RC-hCF" secondAttribute="bottom" constant="8" id="cNo-qa-09e"/>
                     <constraint firstItem="1FU-or-K14" firstAttribute="centerY" secondItem="48m-tQ-pQ7" secondAttribute="centerY" id="eG5-j2-jjn"/>
                     <constraint firstItem="48m-tQ-pQ7" firstAttribute="top" secondItem="sUl-Ae-kgQ" secondAttribute="bottom" constant="4" id="ePV-Kr-h8E"/>
@@ -246,6 +245,9 @@
         <namedColor name="redColor">
             <color red="0.98400002717971802" green="0.0" blue="0.17299999296665192" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
+        <systemColor name="systemGrayColor">
+            <color red="0.55686274509803924" green="0.55686274509803924" blue="0.57647058823529407" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
         <systemColor name="systemYellowColor">
             <color red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>

@@ -27,22 +27,28 @@ class MovieDetailsViewModel {
     }
     
     func getMovieDetails(complete: @escaping()->()) {
-        WebService.shared.getMovieDetails(id: id) { [unowned self] details in
-            self.movieDetails = details
+        WebService.shared.getMovieDetails(id: id) { [unowned self] details, error in
+            if error == nil, details != nil {
+                self.movieDetails = details!
+            }
             complete()
         }
     }
     
     func getCasts(complete: @escaping()->()) {
-        WebService.shared.getMovieCasts(id: id) { casts in
-            self.movieCasts = casts
+        WebService.shared.getMovieCasts(id: id) { casts, error in
+            if error == nil, casts != nil {
+                self.movieCasts = casts!
+            }
             complete()
         }
     }
     
     func getSilimiarMovies(complete: @escaping()->()) {
-        WebService.shared.getSimiliarMovies(id: id) { movies in
-            self.similarMovies = movies
+        WebService.shared.getSimiliarMovies(id: id) { movies, error in
+            if error == nil, movies != nil {
+                self.similarMovies = movies!
+            }
             complete()
         }
     }
@@ -72,8 +78,10 @@ class MovieDetailsViewModel {
     }
     
     func rateMovie(point: Float, complete: @escaping(RatePostModel)->()) {
-        WebService.shared.rateMovie(point: point, movieID: id) { response in
-            complete(response)
+        WebService.shared.rateMovie(point: point, movieID: id) { response, error in
+            if error == nil, response != nil {
+                complete(response!)
+            }
         }
     }
     

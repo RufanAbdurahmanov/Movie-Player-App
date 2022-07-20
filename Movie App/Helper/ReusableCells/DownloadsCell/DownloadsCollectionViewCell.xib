@@ -17,13 +17,13 @@
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="E32-ih-6Kb">
-                        <rect key="frame" x="8" y="4" width="298" height="20.5"/>
+                        <rect key="frame" x="8" y="12" width="298" height="20.5"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="adA-rm-Cj3">
-                        <rect key="frame" x="8" y="60.5" width="298" height="20.5"/>
+                        <rect key="frame" x="8" y="52.5" width="298" height="20.5"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
@@ -32,12 +32,12 @@
             </view>
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
             <constraints>
-                <constraint firstItem="E32-ih-6Kb" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="4" id="4br-Du-kbh"/>
+                <constraint firstItem="E32-ih-6Kb" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="12" id="4br-Du-kbh"/>
                 <constraint firstAttribute="trailing" secondItem="E32-ih-6Kb" secondAttribute="trailing" constant="8" id="9Kg-Cy-oAb"/>
                 <constraint firstItem="E32-ih-6Kb" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="8" id="JDK-q3-9zw"/>
                 <constraint firstItem="adA-rm-Cj3" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="8" id="T0Z-tQ-mwP"/>
                 <constraint firstAttribute="trailing" secondItem="adA-rm-Cj3" secondAttribute="trailing" constant="8" id="Ve8-dG-20D"/>
-                <constraint firstAttribute="bottom" secondItem="adA-rm-Cj3" secondAttribute="bottom" constant="4" id="dBE-Xr-Poq"/>
+                <constraint firstAttribute="bottom" secondItem="adA-rm-Cj3" secondAttribute="bottom" constant="12" id="dBE-Xr-Poq"/>
             </constraints>
             <size key="customSize" width="314" height="85"/>
             <connections>

@@ -13,9 +13,11 @@ class SearchViewModel {
     var query = ""
     
     func getSearch(query: String, complete: @escaping()->() ) {
-        WebService.shared.searchMovies(query: query) {[unowned self] movies in
-            self.movies.removeAll()
-            self.movies = movies
+        WebService.shared.searchMovies(query: query) {[unowned self] movies, error in
+            if error == nil, movies != nil {
+                self.movies.removeAll()
+                self.movies = movies!
+            }
             complete()
         }
     }
