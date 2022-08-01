@@ -342,6 +342,18 @@
 			path = ComingSoonCell;
 			sourceTree = "<group>";
 		};
+		5C2B1259289807EB003A446E /* Extesions */ = {
+			isa = PBXGroup;
+			children = (
+				5CD6B98228589FA600F2D8D5 /* UIViewController + Extension.swift */,
+				5C6EC60B284517AC00A2007A /* UIView + Extension.swift */,
+				5C6EC60F2845747A00A2007A /* UIColor + Extension.swift */,
+				5C78D6E628498A73002D0CFB /* UIImageView + Extesion.swift */,
+				5CD6B9842858A85B00F2D8D5 /* Int + Extension.swift */,
+			);
+			path = Extesions;
+			sourceTree = "<group>";
+		};
 		5C418AE928703914008BC547 /* DiscoverModule */ = {
 			isa = PBXGroup;
 			children = (
@@ -553,11 +565,7 @@
 				5C78D6CA28476F54002D0CFB /* ReusableCells */,
 				5C1EF1542865864100976E80 /* PanModalViewController.swift */,
 				5CA1796F28587A86001C6792 /* TrailerView */,
-				5CD6B98228589FA600F2D8D5 /* UIViewController + Extension.swift */,
-				5C6EC60B284517AC00A2007A /* UIView + Extension.swift */,
-				5C6EC60F2845747A00A2007A /* UIColor + Extension.swift */,
-				5C78D6E628498A73002D0CFB /* UIImageView + Extesion.swift */,
-				5CD6B9842858A85B00F2D8D5 /* Int + Extension.swift */,
+				5C2B1259289807EB003A446E /* Extesions */,
 			);
 			path = Helper;
 			sourceTree = "<group>";

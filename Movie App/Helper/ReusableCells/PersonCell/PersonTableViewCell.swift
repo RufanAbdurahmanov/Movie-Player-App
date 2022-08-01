@@ -14,7 +14,6 @@ class PersonTableViewCell: UITableViewCell {
     @IBOutlet weak var personImageView: UIImageView!
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var voteLabel: UILabel!
-    @IBOutlet weak var alsoKnownLabel: UILabel!
     @IBOutlet weak var birthPlaceLabel: UILabel!
     @IBOutlet weak var biographyLabel: UILabel!
     @IBOutlet weak var birthdayLabel: UILabel!
@@ -59,9 +58,8 @@ class PersonTableViewCell: UITableViewCell {
         }
         biographyLabel.text = data.biography ?? ""
         birthPlaceLabel.text = data.placeOfBirth
-        alsoKnownLabel.text = alsoKnown
-        birthdayLabel.text = data.birthday ?? "unknown"
-        deathdayLabel.text = data.deathday ?? "still alive"
+        birthdayLabel.text = data.birthday ?? "Unknown"
+        deathdayLabel.text = data.deathday ?? "Alive"
     }
     
     var callBackAllMovies: (()->())?

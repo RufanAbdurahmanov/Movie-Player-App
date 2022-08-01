@@ -77,7 +77,8 @@ class DetailsTableViewCell: UITableViewCell {
         
         
         
-        voteLabel.text = String(details.voteAverage ?? 0.0)
+        //voteLabel.text = String(details.voteAverage ?? 0.0)
+        voteLabel.text = "\(round((details.voteAverage ?? 0.0)*10)/10.0)"
         //runtimeLabel.text = String("\((details.runtime ?? 0)/60)h \((details.runtime ?? 0)%60)m")
         runtimeLabel.text = "\(details.runtime ?? 10) minutes"
         
