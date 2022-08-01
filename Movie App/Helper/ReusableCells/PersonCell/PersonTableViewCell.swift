@@ -66,7 +66,7 @@ class PersonTableViewCell: UITableViewCell {
     @IBAction func seeAllButton(_ sender: Any) {
         callBackAllMovies!()
     }
-    var callBackForMovie: (()->())?
+    var callBackForMovie: ((Int)->())?
 }
 
 extension PersonTableViewCell: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
@@ -81,7 +81,7 @@ extension PersonTableViewCell: UICollectionViewDelegate, UICollectionViewDataSou
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        callBackForMovie!()
+        callBackForMovie!(indexPath.row)
     }
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         return CGSize(width: collectionView.frame.width/3, height: collectionView.frame.height)

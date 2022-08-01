@@ -52,12 +52,12 @@ extension PersonViewController: UITableViewDelegate, UITableViewDataSource {
             seeAllMoviesVC.viewModel = SeeAllMoviesViewModel(movies: self.viewModel.personMovies)
             self.navigationController?.show(seeAllMoviesVC, sender: nil)
         }
-        cell.callBackForMovie = { [weak self] in
+        cell.callBackForMovie = { id in
             let detailsID = "\(MovieDetailsViewController.self)"
-            let detailsVC = self?.storyboard?.instantiateViewController(withIdentifier: detailsID) as! MovieDetailsViewController
+            let detailsVC = self.storyboard?.instantiateViewController(withIdentifier: detailsID) as! MovieDetailsViewController
             
-            detailsVC.viewModel = MovieDetailsViewModel(id: self?.viewModel.personMovies[indexPath.item].cellId ?? 0, name: self?.viewModel.personMovies[indexPath.item].cellTitle ?? "")
-            self?.navigationController?.show(detailsVC, sender: nil)
+            detailsVC.viewModel = MovieDetailsViewModel(id: self.viewModel.personMovies[id].cellId ?? 0, name: self.viewModel.personMovies[id].cellTitle ?? "")
+            self.navigationController?.show(detailsVC, sender: nil)
         }
         return cell
     }

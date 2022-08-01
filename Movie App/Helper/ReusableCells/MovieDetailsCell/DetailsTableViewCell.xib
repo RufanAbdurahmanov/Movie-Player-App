@@ -31,8 +31,8 @@
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Star Wars Tagline" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oEF-pg-TBF">
-                        <rect key="frame" x="8" y="280.5" width="132.5" height="20"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Star Wars Tagline" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oEF-pg-TBF">
+                        <rect key="frame" x="8" y="280.5" width="328" height="20"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="20" id="3Nk-1W-ZhW"/>
                         </constraints>
@@ -233,6 +233,7 @@
                     <constraint firstItem="VBU-1H-Lx4" firstAttribute="top" secondItem="oEF-pg-TBF" secondAttribute="bottom" constant="8" id="JZh-qg-zNE"/>
                     <constraint firstItem="M9b-zo-SB7" firstAttribute="top" secondItem="AFI-WF-cfk" secondAttribute="bottom" constant="16" id="JxM-yS-G9J"/>
                     <constraint firstItem="UHu-gL-fuU" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="8" id="LIn-l2-ktR"/>
+                    <constraint firstAttribute="trailing" secondItem="oEF-pg-TBF" secondAttribute="trailing" constant="8" id="LYo-ru-rAE"/>
                     <constraint firstItem="RSs-3V-PoZ" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="8" id="MGS-pI-1I8"/>
                     <constraint firstAttribute="trailing" secondItem="RSs-3V-PoZ" secondAttribute="trailing" constant="8" id="N7J-Ah-Mjh"/>
                     <constraint firstItem="AFI-WF-cfk" firstAttribute="top" secondItem="ZWz-Mw-EBs" secondAttribute="bottom" constant="12" id="NVS-BP-vCR"/>
