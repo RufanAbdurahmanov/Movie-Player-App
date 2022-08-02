@@ -40,12 +40,12 @@ class SearchViewController: UIViewController, UITextFieldDelegate {
            if let text = textField.text,
               let textRange = Range(range, in: text) {
                let updatedText = text.replacingCharacters(in: textRange, with: string)
-               if updatedText.count >= 2 {
+               if updatedText.count >= 3 {
                    viewModel.getSearch(query: updatedText) {
                        self.collectionView.reloadData()
                    }
                }
-               if updatedText.count < 2 {
+               if updatedText.count < 3 {
                    viewModel.movies.removeAll()
                    collectionView.reloadData()
                }
