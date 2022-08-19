@@ -16,7 +16,8 @@ class PersonsDetailViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         //view.setTwoGradient(colorOne: UIColor.lightBlueColor, colorTwo: UIColor.darkBlueColor)
-        view.backgroundColor = UIColor.darkBlueColor
+        //view.backgroundColor = UIColor.darkBlueColor
+        view.backgroundColor = .black
         // Do any additional setup after loading the view.
         
         collectionView.register(UINib(nibName: cellID, bundle: nil), forCellWithReuseIdentifier: cellID)
@@ -36,7 +37,8 @@ extension PersonsDetailViewController: UICollectionViewDelegate, UICollectionVie
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: collectionView.frame.width / 2 - 10, height: 240)
+        //return CGSize(width: collectionView.frame.width / 2 - 10, height: 240)
+        return CGSize(width: collectionView.frame.width / 3 - 7, height: 200)
     }
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let personVC = self.storyboard?.instantiateViewController(withIdentifier: "\(PersonViewController.self)") as! PersonViewController

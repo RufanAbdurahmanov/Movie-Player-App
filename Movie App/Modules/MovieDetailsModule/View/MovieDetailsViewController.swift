@@ -27,7 +27,8 @@ class MovieDetailsViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = UIColor.darkBlueColor
+        //view.backgroundColor = UIColor.darkBlueColor
+        view.backgroundColor = .black
         
         getDatas()
         tableView.register(UINib(nibName: cellID, bundle: nil), forCellReuseIdentifier: cellID)

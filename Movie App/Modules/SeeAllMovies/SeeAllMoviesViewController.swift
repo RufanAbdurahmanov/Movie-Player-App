@@ -16,7 +16,8 @@ class SeeAllMoviesViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = UIColor.darkBlueColor
+        //view.backgroundColor = UIColor.darkBlueColor
+        view.backgroundColor = .black
         collectionView.backgroundColor = .clear
         collectionView.register(UINib(nibName: cellID, bundle: nil), forCellWithReuseIdentifier: cellID)
     }
@@ -44,6 +45,7 @@ extension SeeAllMoviesViewController: UICollectionViewDelegate, UICollectionView
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: collectionView.frame.width / 2 - 10, height: 240)
+        //return CGSize(width: collectionView.frame.width / 2 - 10, height: 240)
+        return CGSize(width: collectionView.frame.width / 3 - 7, height: 200)
     }
 }

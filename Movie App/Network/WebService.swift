@@ -76,7 +76,7 @@ class WebService: WebServiceProtocol {
             if error == nil, movies != nil {
                 complete(movies?.results, nil)
             } else {
-                complete(nil, error!)
+                complete(nil, error)
             }
         }
     }

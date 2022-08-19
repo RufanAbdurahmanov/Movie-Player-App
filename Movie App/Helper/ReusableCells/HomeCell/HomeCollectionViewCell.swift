@@ -21,7 +21,7 @@ class HomeCollectionViewCell: UICollectionViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        //seeAllImageView.image = UIImage(named: "more2")
+        
         collectionView.delegate = self
         collectionView.dataSource = self
         
@@ -54,7 +54,7 @@ extension HomeCollectionViewCell: UICollectionViewDelegate, UICollectionViewData
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: 130, height: collectionView.frame.height)
+        return CGSize(width: 140, height: collectionView.frame.height)
     }
     
     

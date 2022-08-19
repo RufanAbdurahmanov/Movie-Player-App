@@ -24,7 +24,8 @@ class HomeViewController: UIViewController {
 
         navigationItem.title = "Movie Player"
         //view.setTwoGradient(colorOne: UIColor.lightBlueColor, colorTwo: UIColor.darkBlueColor)
-        view.backgroundColor = UIColor.darkBlueColor
+        //view.backgroundColor = UIColor.darkBlueColor
+        view.backgroundColor = .black
         
         movieCollectonView.register(UINib(nibName: cellID, bundle: nil), forCellWithReuseIdentifier: cellID)
         tvShowsCollectionView.register(UINib(nibName: cellID, bundle: nil), forCellWithReuseIdentifier: cellID)

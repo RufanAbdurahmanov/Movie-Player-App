@@ -17,7 +17,8 @@ class SearchViewController: UIViewController, UITextFieldDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = #colorLiteral(red: 0.09000000358, green: 0.1099999994, blue: 0.1330000013, alpha: 1)
+        //view.backgroundColor = #colorLiteral(red: 0.09000000358, green: 0.1099999994, blue: 0.1330000013, alpha: 1)
+        view.backgroundColor = .black
         textField.delegate = self
         textField.becomeFirstResponder()
         
@@ -45,7 +46,7 @@ class SearchViewController: UIViewController, UITextFieldDelegate {
                        self.collectionView.reloadData()
                    }
                }
-               if updatedText.count < 3 {
+               if updatedText.count < 3  {
                    viewModel.movies.removeAll()
                    collectionView.reloadData()
                }
@@ -83,6 +84,7 @@ class SearchViewController: UIViewController, UITextFieldDelegate {
         }
         
         func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-            return CGSize(width: collectionView.frame.width / 2 - 10, height: 240)
+            return CGSize(width: collectionView.frame.width / 3 - 7, height: 200)
+            
         }
     }

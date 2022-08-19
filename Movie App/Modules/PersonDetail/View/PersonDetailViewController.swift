@@ -17,7 +17,8 @@ class PersonViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        view.backgroundColor = UIColor.darkBlueColor
+        //view.backgroundColor = UIColor.darkBlueColor
+        view.backgroundColor = .black
         
         tableView.backgroundColor = UIColor.clear
         tableView.register(UINib(nibName: cellID, bundle: nil), forCellReuseIdentifier: cellID)

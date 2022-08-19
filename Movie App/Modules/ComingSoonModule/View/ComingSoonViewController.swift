@@ -16,9 +16,10 @@ class ComingSoonViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationItem.title = "Coming Soon"
-        //view.setTwoGradient(colorOne: UIColor.lightBlueColor, colorTwo: UIColor.darkBlueColor)
-        view.backgroundColor = UIColor.darkBlueColor
-
+        
+        //view.backgroundColor = UIColor.darkBlueColor
+        view.backgroundColor = .black
+        
         viewModel.getComingSoonMovies {
             self.collectionView.reloadData()
         }
