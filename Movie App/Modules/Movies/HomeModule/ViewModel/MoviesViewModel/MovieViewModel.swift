@@ -18,7 +18,7 @@ class MovieViewModel {
         WebService.shared.getTrendingMovies(page: 1) { [unowned self] trendingMovies, error in
             if error == nil, trendingMovies != nil {
                 for movie in trendingMovies! {
-                    movieItems.append(CellItem(id: movie.id, title: movie.originalTitle, url: movie.backdropPath, voteAvarage: movie.voteAverage, releaseDate: movie.releaseDate))
+                    movieItems.append(CellItem(id: movie.id, title: movie.originalTitle, url: movie.posterPath, voteAvarage: movie.voteAverage, releaseDate: movie.releaseDate))
                 }
                 movies.append(Items(title: "Trending", cellItems: movieItems))
                 movieItems.removeAll()
@@ -33,7 +33,7 @@ class MovieViewModel {
         WebService.shared.getNowPlayingMovies(page: 1) { [unowned self] nowPlayingMovies, error in
             if error == nil, nowPlayingMovies != nil {
                 for movie in nowPlayingMovies! {
-                    movieItems.append(CellItem(id: movie.id, title: movie.originalTitle, url: movie.backdropPath, voteAvarage: movie.voteAverage, releaseDate: movie.releaseDate))
+                    movieItems.append(CellItem(id: movie.id, title: movie.originalTitle, url: movie.posterPath, voteAvarage: movie.voteAverage, releaseDate: movie.releaseDate))
                 }
                 movies.append(Items(title: "Now-Playing", cellItems: movieItems))
                 movieItems.removeAll()
@@ -46,7 +46,7 @@ class MovieViewModel {
         WebService.shared.getPopularMovies(page: 1) { [unowned self] popularMovies, error in
             if error == nil, popularMovies != nil {
                 for movie in popularMovies! {
-                    movieItems.append(CellItem(id: movie.id, title: movie.originalTitle, url: movie.backdropPath, voteAvarage: movie.voteAverage, releaseDate: movie.releaseDate))
+                    movieItems.append(CellItem(id: movie.id, title: movie.originalTitle, url: movie.posterPath, voteAvarage: movie.voteAverage, releaseDate: movie.releaseDate))
                 }
                 movies.append(Items(title: "Popular", cellItems: movieItems))
                 movieItems.removeAll()
@@ -59,7 +59,7 @@ class MovieViewModel {
         WebService.shared.getTopRatedMovies(page: 1) { [unowned self] topRatedMovies, error in
             if error == nil, topRatedMovies != nil {
                 for movie in topRatedMovies! {
-                    movieItems.append(CellItem(id: movie.id, title: movie.originalTitle, url: movie.backdropPath, voteAvarage: movie.voteAverage, releaseDate: movie.releaseDate))
+                    movieItems.append(CellItem(id: movie.id, title: movie.originalTitle, url: movie.posterPath, voteAvarage: movie.voteAverage, releaseDate: movie.releaseDate))
                 }
                 movies.append(Items(title: "Top-Rated", cellItems: movieItems))
                 movieItems.removeAll()
