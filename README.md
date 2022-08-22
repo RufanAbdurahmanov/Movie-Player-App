@@ -19,12 +19,9 @@ In this project I used [TMDB](https://developers.themoviedb.org/3/getting-starte
  
  Recording of app:
  
- 
- 
- 
 
 
+https://user-images.githubusercontent.com/55838100/186025001-07d34bf5-638f-4a4d-95ee-6375ce329719.mp4
 
 
-https://user-images.githubusercontent.com/55838100/185925604-e62a3df4-560b-4ea5-8ca3-c08c6fb214ce.mp4
 
