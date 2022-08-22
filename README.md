@@ -23,5 +23,8 @@ In this project I used [TMDB](https://developers.themoviedb.org/3/getting-starte
  
  
 
-https://user-images.githubusercontent.com/55838100/180023806-174c3763-5e34-4ff3-8997-42572cb85175.mp4
+
+
+
+https://user-images.githubusercontent.com/55838100/185925604-e62a3df4-560b-4ea5-8ca3-c08c6fb214ce.mp4
 
