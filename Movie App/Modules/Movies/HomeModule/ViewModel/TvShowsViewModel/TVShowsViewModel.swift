@@ -20,7 +20,7 @@ class TvShowsViewModel {
                 for tv in tvs! {
                     tvShowItems.append(CellItem(id: tv.id, title: tv.originalName, url: tv.backdropPath, voteAvarage: tv.voteAverage, releaseDate: tv.firstAirDate))
                 }
-                tvShows.append(Items(title: "Trending Tv Shows", cellItems: tvShowItems))
+                tvShows.append(Items(title: "Trending", cellItems: tvShowItems))
                 tvShowItems.removeAll()
             }
             complete()
@@ -33,7 +33,7 @@ class TvShowsViewModel {
                 for tv in tvs! {
                     tvShowItems.append(CellItem(id: tv.id, title: tv.originalName, url: tv.backdropPath, voteAvarage: tv.voteAverage, releaseDate: tv.firstAirDate))
                 }
-                tvShows.append(Items(title: "Airing Tv Shows", cellItems: tvShowItems))
+                tvShows.append(Items(title: "Airing", cellItems: tvShowItems))
                 tvShowItems.removeAll()
             }
             complete()
@@ -46,7 +46,7 @@ class TvShowsViewModel {
                 for tv in tvs! {
                     tvShowItems.append(CellItem(id: tv.id, title: tv.originalName, url: tv.backdropPath, voteAvarage: tv.voteAverage, releaseDate: tv.firstAirDate))
                 }
-                tvShows.append(Items(title: "On the Air Tv Shows", cellItems: tvShowItems))
+                tvShows.append(Items(title: "On the Air", cellItems: tvShowItems))
                 tvShowItems.removeAll()
             }
             complete()
@@ -59,7 +59,7 @@ class TvShowsViewModel {
                 for tv in tvs! {
                     tvShowItems.append(CellItem(id: tv.id, title: tv.originalName, url: tv.backdropPath, voteAvarage: tv.voteAverage, releaseDate: tv.firstAirDate))
                 }
-                tvShows.append(Items(title: "Popular Tv Shows", cellItems: tvShowItems))
+                tvShows.append(Items(title: "Popular", cellItems: tvShowItems))
                 tvShowItems.removeAll()
             }
             complete()

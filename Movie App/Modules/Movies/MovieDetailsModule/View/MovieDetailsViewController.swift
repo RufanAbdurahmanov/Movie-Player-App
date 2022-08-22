@@ -136,7 +136,7 @@ extension MovieDetailsViewController: UITableViewDelegate, UITableViewDataSource
         }
         cell.callbackSeeAllSimilarMovies = { [self] in
             let seeAllMoviesVC = storyboard?.instantiateViewController(withIdentifier: "\(SeeAllMoviesViewController.self)") as! SeeAllMoviesViewController
-            seeAllMoviesVC.viewModel = SeeAllMoviesViewModel(movies: viewModel.similarMovies)
+            seeAllMoviesVC.viewModel = SeeAllMoviesViewModel(movieType: "Similar movies", movies: viewModel.similarMovies)
             self.navigationController?.show(seeAllMoviesVC, sender: nil)
         }
         cell.callBackToMovieDetails = { item in

@@ -16,7 +16,7 @@ class GenresViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationItem.title = "Genres"
-        //view.backgroundColor = .darkBlueColor
+
         view.backgroundColor = .black
         collectionView.backgroundColor = .clear
         
@@ -51,7 +51,7 @@ extension GenresViewController: UICollectionViewDelegate, UICollectionViewDataSo
         viewModel = DiscoverViewModel(id: viewModel.genres[indexPath.item].id ?? 0)
         viewModel.getDiscoverMovies {
             self.viewModel.getGenres {
-                seeAllMoviesVC.viewModel = SeeAllMoviesViewModel(movies: self.viewModel.movies)
+                seeAllMoviesVC.viewModel = SeeAllMoviesViewModel( movieType: "\(self.viewModel.genres[indexPath.item].name ?? "") movies", movies: self.viewModel.movies)
                 self.navigationController?.show(seeAllMoviesVC, sender: nil)
             }
         }
@@ -59,7 +59,7 @@ extension GenresViewController: UICollectionViewDelegate, UICollectionViewDataSo
     
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: collectionView.frame.width/2 - 10, height: 80)
+        return CGSize(width: collectionView.frame.width/2 - 7, height: 80)
     }
     
 }

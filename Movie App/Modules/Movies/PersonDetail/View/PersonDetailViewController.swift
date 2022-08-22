@@ -50,7 +50,7 @@ extension PersonViewController: UITableViewDelegate, UITableViewDataSource {
         
         cell.callBackAllMovies = {
             let seeAllMoviesVC = self.storyboard?.instantiateViewController(withIdentifier: "\(SeeAllMoviesViewController.self)") as! SeeAllMoviesViewController
-            seeAllMoviesVC.viewModel = SeeAllMoviesViewModel(movies: self.viewModel.personMovies)
+            seeAllMoviesVC.viewModel = SeeAllMoviesViewModel(movieType: "\(self.viewModel.person.name)'s movies", movies: self.viewModel.personMovies)
             self.navigationController?.show(seeAllMoviesVC, sender: nil)
         }
         cell.callBackForMovie = { id in

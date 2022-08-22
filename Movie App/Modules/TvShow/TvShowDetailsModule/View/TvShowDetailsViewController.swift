@@ -10,7 +10,7 @@ import UIKit
 class TvShowDetailsViewController: UIViewController {
 
     @IBOutlet weak var tableView: UITableView!
-    let cellID = "\(TvShowDetailsTableViewCell.self)"
+    let cellID = "\(ShowDetailTableViewCell.self)"
     
     let viewModel = TvShowDetailsViewModel()
     
@@ -40,7 +40,7 @@ extension TvShowDetailsViewController: UITableViewDelegate, UITableViewDataSourc
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: cellID, for: indexPath) as! TvShowDetailsTableViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: cellID, for: indexPath) as! ShowDetailTableViewCell
   
         return cell
     }

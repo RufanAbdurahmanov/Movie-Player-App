@@ -9,12 +9,14 @@ import Foundation
 
 class SeeAllMoviesViewModel {
     
+    var movieType = ""
     var movies = [CellProtocol]()
     
     init() {}
     
-    init(movies: [CellProtocol]) {
+    init(movieType: String, movies: [CellProtocol]) {
         self.movies = movies
+        self.movieType = movieType 
     }
     
     

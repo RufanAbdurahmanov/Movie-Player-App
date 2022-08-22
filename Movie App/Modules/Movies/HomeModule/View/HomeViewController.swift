@@ -116,7 +116,7 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
         cell.callBackForSeeAllMovies = {
             if self.segmentedControl.selectedSegmentIndex == 0 {
                 let seeAllMoviesVC = self.storyboard?.instantiateViewController(withIdentifier: "\(SeeAllMoviesViewController.self)") as! SeeAllMoviesViewController
-                seeAllMoviesVC.viewModel = SeeAllMoviesViewModel(movies: self.movieViewModel.movies[indexPath.item].cellItems)
+                seeAllMoviesVC.viewModel = SeeAllMoviesViewModel(movieType: self.movieViewModel.movies[indexPath.item].title, movies: self.movieViewModel.movies[indexPath.item].cellItems)
                 self.navigationController?.show(seeAllMoviesVC, sender: nil)
             } else {
                 self.alertCoomingSoon()
