@@ -24,7 +24,6 @@ struct SimiliarMovies: Codable {
 struct SimiliarMoviesResult: Codable, CellProtocol {
     let adult: Bool?
     let backdropPath: String?
-    var url: String? { return backdropPath }
     let genreIDS: [Int]?
     let id: Int?
     var cellId: Int? { return id }
@@ -34,6 +33,7 @@ struct SimiliarMoviesResult: Codable, CellProtocol {
     var cellTitle: String? { return originalTitle }
     let popularity: Double?
     let posterPath, releaseDate: String?
+    var url: String? { posterPath }
     var date: String? { return releaseDate }
     let video: Bool?
     let voteAverage: Double?

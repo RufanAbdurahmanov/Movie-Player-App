@@ -24,7 +24,6 @@ struct TopRatedMovies: Codable {
 struct TopRatedMovieResult: Codable, CellProtocol {
     let adult: Bool?
     let backdropPath: String?
-    var url: String? { backdropPath }
     let genreIDS: [Int]?
     let id: Int?
     var cellId: Int? { id }
@@ -33,6 +32,7 @@ struct TopRatedMovieResult: Codable, CellProtocol {
     let overview: String?
     let popularity: Double?
     let posterPath, releaseDate: String?
+    var url: String? { posterPath }
     var cellTitle: String? { originalTitle }
     let title: String?
     let video: Bool?

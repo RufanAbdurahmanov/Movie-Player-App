@@ -36,9 +36,6 @@ struct TVResult: Codable, CellProtocol {
     let originCountry: [String]?
     let voteCount: Int?
     let backdropPath: String?
-    var url: String? {
-        backdropPath
-    }
     let firstAirDate: String?
     var date: String? {
         firstAirDate
@@ -47,6 +44,9 @@ struct TVResult: Codable, CellProtocol {
     let overview: String?
     let originalLanguage: String?
     let name, posterPath: String?
+    var url: String? {
+        posterPath
+    }
     let popularity: Double?
     let mediaType: String?
 

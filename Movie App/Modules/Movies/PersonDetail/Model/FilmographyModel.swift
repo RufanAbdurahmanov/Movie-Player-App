@@ -18,7 +18,6 @@ struct Filmography: Codable {
 struct Cast: Codable, CellProtocol {
     let adult: Bool?
     let backdropPath: String?
-    var url: String? { return backdropPath }
     let genreIDS: [Int]?
     let id: Int?
     var cellId: Int? { return id }
@@ -28,6 +27,7 @@ struct Cast: Codable, CellProtocol {
     var cellTitle: String? { return originalTitle }
     let popularity: Double?
     let posterPath: String?
+    var url: String? { posterPath }
     let releaseDate: String?
     var date: String? { return releaseDate }
     let video: Bool?

@@ -27,12 +27,12 @@ struct TrendingMovieResult: Codable, CellProtocol {
     var date: String? { releaseDate }
     let adult: Bool?
     let backdropPath: String?
-    var url: String? { backdropPath }
     let genreIDS: [Int]?
     let voteCount: Int?
     let originalLanguage, originalTitle: String?
     var cellTitle: String? { originalTitle }
     let posterPath, title: String?
+    var url: String? { posterPath }
     let video: Bool?
     let voteAverage: Double?
     var vote: Double? { voteAverage }

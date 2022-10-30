@@ -72,7 +72,7 @@ class TvShowsViewModel {
                 for tv in tvs! {
                     tvShowItems.append(CellItem(id: tv.id, title: tv.originalName, url: tv.posterPath, voteAvarage: tv.voteAverage, releaseDate: tv.firstAirDate))
                 }
-                tvShows.append(Items(title: "Top-Rated Tv Shows", cellItems: tvShowItems))
+                tvShows.append(Items(title: "Top-Rated", cellItems: tvShowItems))
                 tvShowItems.removeAll()
             }
             complete()

@@ -16,7 +16,7 @@ class SeeAllMoviesViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        title = viewModel.movieType ?? ""
+        title = viewModel.movieType 
         view.backgroundColor = .black
         collectionView.backgroundColor = .clear
         collectionView.register(UINib(nibName: cellID, bundle: nil), forCellWithReuseIdentifier: cellID)

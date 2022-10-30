@@ -30,9 +30,6 @@ struct UpcomigDates: Codable {
 struct UpcomingMovieResult: Codable, CellProtocol {
     let adult: Bool?
     let backdropPath: String?
-    var url: String? {
-        backdropPath
-    }
     let genreIDS: [Int]?
     let id: Int?
     let originalLanguage, originalTitle: String
@@ -42,6 +39,7 @@ struct UpcomingMovieResult: Codable, CellProtocol {
     let overview: String?
     let popularity: Double?
     let posterPath, releaseDate: String?
+    var url: String? { posterPath }
     var date: String? {
         releaseDate
     }

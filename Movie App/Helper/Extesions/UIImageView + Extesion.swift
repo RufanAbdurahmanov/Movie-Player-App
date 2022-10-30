@@ -23,7 +23,7 @@ extension UIImageView {
 
 // https://image.tmdb.org/t/p/w500
 // https://image.tmdb.org/t/p/w185
-//https://image.tmdb.org/t/p/w154/A6Y0m7qEe04ZTHKyYDLbnyCHNzn.jpg
+//https://image.tmdb.org/t/p/w1280/A6Y0m7qEe04ZTHKyYDLbnyCHNzn.jpg
 
 //"backdrop_sizes": [
 //      "w45",

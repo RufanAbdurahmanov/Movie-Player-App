@@ -23,7 +23,6 @@ struct TopRatedTv: Codable {
 // MARK: - TopRatedTvResult
 struct TopRatedTvResult: Codable, CellProtocol {
     let backdropPath: String?
-    var url: String? { backdropPath }
     let firstAirDate: String?
     var date: String? { firstAirDate }
     let genreIDS: [Int]?
@@ -35,6 +34,7 @@ struct TopRatedTvResult: Codable, CellProtocol {
     var cellTitle: String? { originalName }
     let popularity: Double?
     let posterPath: String?
+    var url: String? { posterPath }
     let voteAverage: Double?
     var vote: Double? { voteAverage }
     let voteCount: Int?

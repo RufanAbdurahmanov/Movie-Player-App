@@ -51,7 +51,7 @@ extension GenresViewController: UICollectionViewDelegate, UICollectionViewDataSo
         viewModel = DiscoverViewModel(id: viewModel.genres[indexPath.item].id ?? 0)
         viewModel.getDiscoverMovies {
             self.viewModel.getGenres {
-                seeAllMoviesVC.viewModel = SeeAllMoviesViewModel( movieType: "\(self.viewModel.genres[indexPath.item].name ?? "") moviesbac", movies: self.viewModel.movies)
+                seeAllMoviesVC.viewModel = SeeAllMoviesViewModel( movieType: "\(self.viewModel.genres[indexPath.item].name ?? "") movies", movies: self.viewModel.movies)
                 self.navigationController?.show(seeAllMoviesVC, sender: nil)
             }
         }

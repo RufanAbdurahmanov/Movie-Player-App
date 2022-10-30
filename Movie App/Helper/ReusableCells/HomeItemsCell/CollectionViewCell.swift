@@ -26,10 +26,6 @@ extension CellProtocol {
 class CollectionViewCell: UICollectionViewCell {
     
     @IBOutlet weak var imageView: UIImageView!
-    @IBOutlet weak var ratingLabel: UILabel!
-    @IBOutlet weak var nameLabel: UILabel!
-    @IBOutlet weak var dateLabel: UILabel!
-    
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -45,9 +41,9 @@ class CollectionViewCell: UICollectionViewCell {
     func configure(data: CellProtocol) {
         self.imageView.loadImage(imageURL: data.url ?? "")
         //self.dateLabel.text = data.date
-        self.dateLabel.isHidden = true
-        self.nameLabel.text = data.cellTitle
-        self.ratingLabel.text = "\(round((data.vote ?? 0.0)*10)/10.0)"
+        //self.dateLabel.isHidden = true
+        //self.nameLabel.text = data.cellTitle
+        //self.ratingLabel.text = "\(round((data.vote ?? 0.0)*10)/10.0)"
     }
     
 }

@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="yAY-eo-IHX">
-    <device id="retina6_1" orientation="portrait" appearance="light"/>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21225" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="yAY-eo-IHX">
+    <device id="retina6_5" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21207"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -146,7 +147,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cdE-53-hJG">
-                                <rect key="frame" x="149.5" y="623" width="115" height="53"/>
+                                <rect key="frame" x="149.66666666666666" y="623" width="114.99999999999997" height="53"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="115" id="h4C-pX-BDE"/>
                                     <constraint firstAttribute="height" constant="53" id="jeL-ws-oDg"/>
@@ -165,7 +166,7 @@
                                 </connections>
                             </button>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="arrow.down.square" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="y3q-pc-E6Q">
-                                <rect key="frame" x="87" y="160" width="248" height="138"/>
+                                <rect key="frame" x="87" y="160.66666666666669" width="248" height="137.66666666666666"/>
                                 <color key="tintColor" name="redColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="140.5" id="nJQ-6q-xqH"/>
@@ -214,16 +215,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="tJJ-fY-dMP">
-                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                <color key="separatorColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <color key="sectionIndexBackgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <connections>
-                                    <outlet property="dataSource" destination="lLv-eH-n6I" id="6kT-8w-4iU"/>
-                                    <outlet property="delegate" destination="lLv-eH-n6I" id="9dw-o2-9oh"/>
-                                </connections>
-                            </tableView>
                             <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="wHz-M1-4oV">
                                 <rect key="frame" x="0.0" y="33" width="414" height="44"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -231,17 +222,8 @@
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="MIz-SP-ucZ"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                        <constraints>
-                            <constraint firstItem="tJJ-fY-dMP" firstAttribute="trailing" secondItem="MIz-SP-ucZ" secondAttribute="trailing" id="3kM-Kf-dod"/>
-                            <constraint firstItem="tJJ-fY-dMP" firstAttribute="bottom" secondItem="MIz-SP-ucZ" secondAttribute="bottom" id="BVy-on-RU4"/>
-                            <constraint firstItem="tJJ-fY-dMP" firstAttribute="leading" secondItem="MIz-SP-ucZ" secondAttribute="leading" id="UE9-fr-Nf1"/>
-                            <constraint firstItem="tJJ-fY-dMP" firstAttribute="top" secondItem="MIz-SP-ucZ" secondAttribute="top" id="iEJ-bG-qpE"/>
-                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="TOc-XW-zSG"/>
-                    <connections>
-                        <outlet property="tableView" destination="tJJ-fY-dMP" id="5kw-Xx-Krj"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2b1-rc-nrw" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -370,7 +352,7 @@
                                 </constraints>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hYY-bJ-k1T">
-                                <rect key="frame" x="163" y="159" width="88.5" height="37"/>
+                                <rect key="frame" x="162.66666666666666" y="159" width="88.666666666666657" height="37"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="Cancel">
                                     <fontDescription key="titleFontDescription" type="system" weight="heavy" pointSize="19"/>
@@ -736,11 +718,11 @@
             </objects>
             <point key="canvasLocation" x="860.86956521739137" y="1920.5357142857142"/>
         </scene>
-        <!--Discover-->
+        <!--Explore-->
         <scene sceneID="oPr-Ru-EF7">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="lHH-xt-VaA" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Discover" image="safari.fill" catalog="system" id="hvX-Tj-lQV"/>
+                    <tabBarItem key="tabBarItem" title="Explore" image="safari.fill" catalog="system" id="hvX-Tj-lQV"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="e3z-8a-bXD">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
@@ -758,12 +740,12 @@
     </scenes>
     <resources>
         <image name="arrow.down.square" catalog="system" width="128" height="114"/>
-        <image name="arrow.down.to.line" catalog="system" width="111" height="128"/>
-        <image name="house.fill" catalog="system" width="128" height="106"/>
-        <image name="magnifyingglass" catalog="system" width="128" height="115"/>
-        <image name="play.circle.fill" catalog="system" width="128" height="121"/>
-        <image name="safari.fill" catalog="system" width="128" height="121"/>
-        <image name="xmark.circle.fill" catalog="system" width="128" height="121"/>
+        <image name="arrow.down.to.line" catalog="system" width="110" height="128"/>
+        <image name="house.fill" catalog="system" width="128" height="104"/>
+        <image name="magnifyingglass" catalog="system" width="128" height="117"/>
+        <image name="play.circle.fill" catalog="system" width="128" height="123"/>
+        <image name="safari.fill" catalog="system" width="128" height="123"/>
+        <image name="xmark.circle.fill" catalog="system" width="128" height="123"/>
         <namedColor name="darkBlue">
             <color red="0.090000003576278687" green="0.10999999940395355" blue="0.13300000131130219" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
