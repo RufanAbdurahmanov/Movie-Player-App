@@ -29,7 +29,9 @@ class SearchViewController: UIViewController, UITextFieldDelegate {
     func textFieldShouldClear(_ textField: UITextField) -> Bool {
         textField.resignFirstResponder()
         viewModel.movies.removeAll()
-        collectionView.reloadData()
+        DispatchQueue.main.async {
+            self.collectionView.reloadData()
+        }
         return true
     }
     
@@ -43,12 +45,16 @@ class SearchViewController: UIViewController, UITextFieldDelegate {
                let updatedText = text.replacingCharacters(in: textRange, with: string)
                if updatedText.count >= 3 {
                    viewModel.getSearch(query: updatedText) {
-                       self.collectionView.reloadData()
+                       DispatchQueue.main.async {
+                           self.collectionView.reloadData()
+                       }
                    }
                }
                if updatedText.count < 3  {
                    viewModel.movies.removeAll()
-                   collectionView.reloadData()
+                   DispatchQueue.main.async {
+                       self.collectionView.reloadData()
+                   }
                }
                
 //               if updatedText.isEmpty {

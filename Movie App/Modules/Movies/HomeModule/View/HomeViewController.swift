@@ -52,7 +52,9 @@ class HomeViewController: UIViewController {
             self.movieViewModel.getNowPlayingMovies {
                 self.movieViewModel.getPopularMovies {
                     self.movieViewModel.getTopRatedMovies {
-                        self.movieCollectonView.reloadData()
+                        DispatchQueue.main.async {
+                            self.movieCollectonView.reloadData()
+                        }
                     }
                 }
             }
@@ -64,7 +66,9 @@ class HomeViewController: UIViewController {
                 self.tvShowsViewModel.getOnTheAirTVs {
                     self.tvShowsViewModel.getPopularTVs {
                         self.tvShowsViewModel.getTopRatedTVs {
-                            self.tvShowsCollectionView.reloadData()
+                            DispatchQueue.main.async {
+                                self.tvShowsCollectionView.reloadData()
+                            }
                         }
                     }
                 }

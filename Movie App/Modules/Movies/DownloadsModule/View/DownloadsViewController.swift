@@ -42,7 +42,9 @@ class DownloadsViewController: UIViewController {
     
     fileprivate func getDownloads() {
         viewModel.fetchTrailersFromCoreData {
-            self.collectionView.reloadData()
+            DispatchQueue.main.async {
+                self.collectionView.reloadData()
+            }
             self.refreshControl.endRefreshing()
         }
     }
@@ -55,7 +57,9 @@ class DownloadsViewController: UIViewController {
     }
     
     @objc func refreshData() {
-        collectionView.reloadData()
+        DispatchQueue.main.async {
+            self.collectionView.reloadData()
+        }
         Timer.scheduledTimer(withTimeInterval: 0.4, repeats: false) { [weak self] _ in
             self?.getDownloads()
         }

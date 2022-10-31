@@ -25,7 +25,9 @@ class TvShowDetailsViewController: UIViewController {
             self.viewModel.getTvShowDetails {
                 self.viewModel.getTvShowSeasons {
                     self.viewModel.getTvShowCasts {
-                        self.tableView.reloadData()
+                        DispatchQueue.main.async {
+                            self.tableView.reloadData()
+                        }
                     }
                 }
             }

@@ -46,7 +46,9 @@ class PersonTableViewCell: UITableViewCell {
     
     func configure(data: Person, movies: [Cast]) {
         personsMovies = movies
-        personMoviesCollectionView.reloadData()
+        DispatchQueue.main.async {
+            self.personMoviesCollectionView.reloadData()
+        }
         var alsoKnown = ""
         personImageView.loadImage(imageURL: data.profilePath ?? "")
         nameLabel.text = data.name ?? ""

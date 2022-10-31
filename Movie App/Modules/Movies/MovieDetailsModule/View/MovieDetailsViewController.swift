@@ -106,7 +106,9 @@ class MovieDetailsViewController: UIViewController {
         self.viewModel.getMovieDetails{
             self.viewModel.getCasts {
                 self.viewModel.getSilimiarMovies {
-                    self.tableView.reloadData()
+                    DispatchQueue.main.async {
+                        self.tableView.reloadData()
+                    }
                 }
             }
         }

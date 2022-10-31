@@ -22,7 +22,9 @@ class TrailerView: UIView {
     func configure(id: String) {
         viewModel.getMovieVideos(id: id) {
             self.callBackForVideoID?(self.viewModel.videos[0])
-            self.collectionView.reloadData()
+            DispatchQueue.main.async {
+                self.collectionView.reloadData()
+            }
         }
     }
 }

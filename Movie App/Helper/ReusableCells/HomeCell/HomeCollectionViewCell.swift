@@ -31,7 +31,9 @@ class HomeCollectionViewCell: UICollectionViewCell {
     func configureCell(viewModel: CellsViewModel) {
         titleLabel.text = viewModel.title
         self.viewModel = viewModel
-        collectionView.reloadData()
+        DispatchQueue.main.async {
+            self.collectionView.reloadData()
+        }
     }
 
     var callBackForSeeAllMovies: (()->())?

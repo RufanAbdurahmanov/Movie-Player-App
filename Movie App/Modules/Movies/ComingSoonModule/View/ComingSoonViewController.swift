@@ -21,7 +21,9 @@ class ComingSoonViewController: UIViewController {
         view.backgroundColor = .black
         
         viewModel.getComingSoonMovies {
-            self.collectionView.reloadData()
+            DispatchQueue.main.async {
+                self.collectionView.reloadData()
+            }
         }
         
         collectionView.register(UINib(nibName: cellID, bundle: nil), forCellWithReuseIdentifier: cellID)

@@ -19,7 +19,6 @@ class DetailsTableViewCell: UITableViewCell {
     
     @IBOutlet weak private var voteLabel: UILabel!
     @IBOutlet weak private var runtimeLabel: UILabel!
-    @IBOutlet weak private var categoriesLabel: UILabel!
     
     @IBOutlet weak private var overviewLabel: UILabel!
     @IBOutlet weak private var castCollectionView: UICollectionView!
@@ -28,6 +27,12 @@ class DetailsTableViewCell: UITableViewCell {
     @IBOutlet weak var similiarMoviesLabel: UILabel!
     
     @IBOutlet weak var similiarMoviesCollectionView: UICollectionView!
+    
+    @IBOutlet weak var genresStackView: UIStackView!
+    @IBOutlet weak var genre1Label: UILabel!
+    @IBOutlet weak var genre2Label: UILabel!
+    
+    
     
     var castss = [MovieCast]()
     var similarMovies = [SimiliarMoviesResult]()
@@ -47,6 +52,26 @@ class DetailsTableViewCell: UITableViewCell {
         castCollectionView.register(UINib(nibName: cellID, bundle: nil), forCellWithReuseIdentifier: cellID)
         similiarMoviesCollectionView.register(UINib(nibName: similarMoviesCellID, bundle: nil), forCellWithReuseIdentifier: similarMoviesCellID)
         similiarMoviesCollectionView.backgroundColor = .clear
+        setUpGenreUI()
+        
+    }
+    
+    func setUpGenreUI() {
+        genresStackView.backgroundColor = .clear
+        genre1Label.font = .systemFont(ofSize: 17, weight: .medium)
+        //genre1Label.backgroundColor = UIColor(displayP3Red: 72/255, green: 72/255, blue: 74/255, alpha: 1.0).withAlphaComponent(0.3)
+        genre1Label.backgroundColor = .clear
+        genre1Label.layer.borderWidth = 0.9
+        genre1Label.layer.borderColor = UIColor.lightGray.cgColor
+        genre1Label.tintColor = .white
+        genre1Label.layer.cornerRadius = 7
+        
+        genre2Label.backgroundColor = .clear
+        genre2Label.font = .systemFont(ofSize: 17, weight: .medium)
+        genre2Label.layer.borderWidth = 0.9
+        genre2Label.layer.borderColor = UIColor.lightGray.cgColor
+        genre2Label.tintColor = .white
+        genre2Label.layer.cornerRadius = 7
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
@@ -63,37 +88,27 @@ class DetailsTableViewCell: UITableViewCell {
     }
     
     func configure(id: String, details: MovieDetails, casts: [MovieCast], similarMovies: [SimiliarMoviesResult]) {
+        
         self.castss = casts
         self.similarMovies = similarMovies
         trailerView.configure(id: id)
-        castCollectionView.reloadData()
-        similiarMoviesCollectionView.reloadData()
+        DispatchQueue.main.async {
+            self.castCollectionView.reloadData()
+            self.similiarMoviesCollectionView.reloadData()
+        }
         
         var languages = ""
-        var categories = ""
         
         nameLabel.text = details.originalTitle ?? ""
         taglineLabel.text = details.tagline ?? ""
-        
-        
-        
-        //voteLabel.text = String(details.voteAverage ?? 0.0)
+
         voteLabel.text = "\(round((details.voteAverage ?? 0.0)*10)/10.0)"
         //runtimeLabel.text = String("\((details.runtime ?? 0)/60)h \((details.runtime ?? 0)%60)m")
         runtimeLabel.text = "\(details.runtime ?? 10) minutes"
         
-        if details.genres != nil {
-            if details.genres!.count <= 2 {
-                for category in details.genres ?? [] {
-                    categories += "\(String(describing: category.name ?? "")), "
-                }
-            } else {
-                for i in 1...2 {
-                    categories += "\(String(describing: details.genres![i].name ?? "")), "
-                }
-
-            }
-        }
+        
+        genre1Label.text = details.genres?.first?.name ?? ""
+        genre2Label.text = details.genres?[1].name ?? ""
         
         if details.spokenLanguages != nil {
             if details.spokenLanguages!.count <= 2 {
@@ -109,7 +124,6 @@ class DetailsTableViewCell: UITableViewCell {
         }
         languagesLabel.text = String(languages.dropLast(2))
         
-        categoriesLabel.text = String(categories.dropLast(2))
         overviewLabel.text = details.overview ?? ""
         releaseDateLabel.text = details.releaseDate ?? ""
     }
@@ -144,7 +158,7 @@ extension DetailsTableViewCell: UICollectionViewDelegate, UICollectionViewDataSo
             cell.configure(cast: castss[indexPath.item])
         }
             return cell
-        } else {
+        }else {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: similarMoviesCellID, for: indexPath) as! CollectionViewCell
             if !similarMovies.isEmpty {
                 cell.configure(data: similarMovies[indexPath.item])
@@ -164,6 +178,6 @@ extension DetailsTableViewCell: UICollectionViewDelegate, UICollectionViewDataSo
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: collectionView.frame.width/3, height: collectionView.frame.height)
+        return CGSize(width: collectionView.frame.width / 3, height: collectionView.frame.height)
     }
 }
